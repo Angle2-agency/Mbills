@@ -1,10 +1,36 @@
-/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+/* ==========================================================================
+                                Fonts import
+   ========================================================================== */
+@font-face {
+    font-family: 'HelveticaNeueThin';
+    src: url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.eot');
+    src: url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.woff') format('woff'),
+    url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.ttf') format('truetype'),
+    url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HelveticaNeueMedium';
+    src: url('../fonts/HelveticaNeue-Medium/HelveticaNeue-Medium.eot');
+    src: url('../fonts/HelveticaNeue-Medium/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeue-Medium/HelveticaNeue-Medium.woff') format('woff'),
+    url('../fonts/HelveticaNeue-Medium/HelveticaNeue-Medium.ttf') format('truetype'),
+    url('../fonts/HelveticaNeue-Medium/HelveticaNeue-Medium.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HelveticaNeueBold';
+    src: url('../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold.eot');
+    src: url('../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold.woff') format('woff'),
+    url('../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold.ttf') format('truetype'),
+    url('../fonts/HelveticaNeue-Bold/HelveticaNeue-Bold.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
 
 /* ==========================================================================
                      Base styles: opinionated defaults
@@ -48,5 +74,183 @@ a:hover {
                                 HEADER classes
    ========================================================================== */
 
+header {
+
+}
+.header__logo {
+    width: 176px;
+    height: 63px;
+    display: block;
+    position: fixed;
+    z-index: 5;
+    top: 13px;
+    left: 50%;
+    margin-left: -88px;
+}
+.header__logo img {
+    width: 158px;
+    height: 42px;
+}
+.nav__button {
+    position: fixed;
+    left: 33px;
+    top: 22px;
+    width: 64px;
+    text-align: right;    
+    cursor: pointer;
+    z-index: 7;    
+}
+.nav__butto_icon {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color:rgba(1, 15, 21, 0.5);
+    display: block;
+    left: 0;
+    top: 12px; 
+    transition: all 300ms ease 200ms;
+}
+.nav__butto_icon::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 2px;
+    background-color: rgba(1, 15, 21, 0.5);
+    position: absolute;
+    right: 0;
+    top: -9px;    
+    transition: all 300ms ease 200ms;
+}
+.nav__butto_icon.show-nav {
+    background-color: transparent;
+    transform: translate3d(-5px, 0px, 0);
+}
+.nav__butto_icon::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 2px;
+    background-color: rgba(1, 15, 21, 0.5);
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    transition: all 300ms ease 200ms;
+}
+.nav__butto_icon.show-nav::before  {
+    width: 25px;
+    height: 2px;
+    transform: rotate(-45deg) translate3d(0, 12px, 0)
+}
+.nav__butto_icon.show-nav::after {
+    width: 25px;
+    height: 2px;
+    transform: rotate(45deg) translate3d(-1px, -12px, 0)
+}
+.nav__butto_text {
+    font-family: HelveticaNeueMedium;
+    font-size: 10px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(1, 15, 21, 0.5);
+}
+
+.nav__top {
+    width: 100%;
+    height: 72px;
+    background-color: #ffffff;    
+    box-shadow: 0 2px 8px 0 rgba(1, 15, 21, 0.08);
+    position: fixed;
+    top: 0;
+}
+.nav__top_but {    
+    height: 47px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px 0 rgba(1, 15, 21, 0.08);
+    float: right;    
+    margin-top: 12px;
+}
+.nav__top_but.appstore {
+    width: 169px;
+    background: url('../img/apple-store.png') no-repeat center / 169px 47px;
+    margin-right: 12px;
+}
 
 
+/* ==========================================================================
+                                NAV LEFT classes
+   ========================================================================== */
+.nav__left {
+    background-color: rgba(1, 15, 21, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+    z-index: 6;  
+    display: none;
+}
+.nav__left aside {
+    width: 400px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    overflow: hidden;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 150ms ease;
+}
+.nav__left aside.show-nav {
+    transform: translate3d(0, 0, 0);
+}
+.nav__left aside ul {
+    list-style: none;
+    margin: 112px 0 0 0;
+    padding: 0 0 0 96px;
+}
+.nav__left aside ul li {        
+    font: bold 16px/1 'HelveticaNeueBold';            
+    margin-bottom: 56px;
+    position: relative;
+}
+.nav__left aside ul li a {
+    color: rgba(1, 15, 21, 0.5);
+    transition: color 100ms ease;
+    text-decoration: none;
+}
+.nav__left aside ul li a:hover {
+    color: rgba(11, 159, 218, 0.5);
+}
+.nav__left aside ul li.current::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: #0b9fda;
+    border-radius: 50%;
+    position: absolute;
+    left: -23px;
+    top: 2px;
+}
+.nav__left_strores {
+    text-align: center;
+    margin-top: 72px;
+}
+.nav__left_strores .googleplay {
+    display: inline-block;
+    width: 144px;
+    height: 48px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
+    background: url('../img/google-play.png') no-repeat center / 144px 48px;
+    margin-right: 25px;
+}
+.nav__left_strores .appstore {
+    display: inline-block;
+    width: 144px;
+    height: 48px;
+    border-radius: 12px;    
+    box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
+    background: url('../img/apple-store.png') no-repeat center / 144px 48px;
+}

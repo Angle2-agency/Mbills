@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160" height="64" viewBox="0 0 160 64">
+    <defs>
+        <rect id="b" width="144" height="48" rx="12"/>
+        <filter id="a" width="119.4%" height="158.3%" x="-9.7%" y="-20.8%" filterUnits="objectBoundingBox">
+            <feOffset dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.00392156863 0 0 0 0 0.0588235294 0 0 0 0 0.0823529412 0 0 0 0.08 0"/>
+        </filter>
+        <linearGradient id="d" x1="19.215%" x2="69.302%" y1="-35.157%" y2="93.537%">
+            <stop offset="0%" stop-color="#19A3B4"/>
+            <stop offset="34.817%" stop-color="#5BC3AF"/>
+            <stop offset="92.234%" stop-color="#C8F7A6"/>
+            <stop offset="100%" stop-color="#D7FEA5"/>
+        </linearGradient>
+        <path id="c" d="M20.092 9.924L2.587.297C2.09.025 1.632-.038 1.262.077L15.6 14.418l4.492-4.493"/>
+        <linearGradient id="e" x1="-14.698%" x2="74.844%" y1="-114.322%" y2="114.156%">
+            <stop offset="0%" stop-color="#FC227C"/>
+            <stop offset="100%" stop-color="#FEEB7B"/>
+        </linearGradient>
+        <linearGradient id="g" x1="28.151%" x2="48.188%" y1="-14.814%" y2="82.894%">
+            <stop offset="0%" stop-color="#0E4DA0"/>
+            <stop offset="100%" stop-color="#6BFED4"/>
+        </linearGradient>
+        <path id="f" d="M1.26.078C.729.244.385.783.385 1.599l.003 25.67c0 .807.334 1.338.85 1.515L15.6 14.42 1.26.078"/>
+        <linearGradient id="i" x1="132.245%" x2="5.959%" y1="16.466%" y2="126.31%">
+            <stop offset="0%" stop-color="#FC472E"/>
+            <stop offset=".332%" stop-color="#FC472F"/>
+            <stop offset="100%" stop-color="#893CD8"/>
+        </linearGradient>
+        <path id="h" d="M1.238 28.784c.373.127.84.067 1.349-.212l17.525-9.64L15.6 14.42 1.238 28.784"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(8 4)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#010F15" xlink:href="#b"/>
+        </g>
+        <text fill="#FFF" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="8" font-weight="400" transform="translate(25 11)">
+            <tspan x="35" y="8">PRENESI IZ</tspan>
+        </text>
+        <text fill="#FFF" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="13" font-weight="bold" transform="translate(25 11)">
+            <tspan x="35" y="22">Google Play</tspan>
+        </text>
+        <g transform="translate(25 13)">
+            <use fill="url(#d)" xlink:href="#c"/>
+            <path fill="url(#e)" d="M20.115 18.932l5.975-3.286c1.212-.669 1.212-1.757 0-2.424l-5.998-3.298-4.492 4.493 4.515 4.515"/>
+            <use fill="url(#g)" xlink:href="#f"/>
+            <use fill="url(#i)" xlink:href="#h"/>
+        </g>
+    </g>
+</svg>
