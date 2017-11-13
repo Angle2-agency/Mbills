@@ -18,7 +18,7 @@ $('#nav-button').click(function(){
 			}else{
 				$('.nav__left_footer').removeClass('na');
 			}
-			$('.nav__left aside').addClass('show-nav');
+			$('.nav__left aside').addClass('show-nav');			
 		});
 		$('.nav__butto_icon').addClass('show-nav');		
 	}else{

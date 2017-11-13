@@ -103,7 +103,7 @@ header {
     display: block;
     position: fixed;
     z-index: 5;
-    top: 21px;
+    top: 14px;
     left: 50%;
     margin-left: -79px;
 }
@@ -185,7 +185,8 @@ header {
     box-shadow: 0 2px 8px 0 rgba(1, 15, 21, 0.08);
     position: fixed;
     top: 0;
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, 0, 0);
+    /*transform: translate3d(0, -100%, 0);*/
     transition: transform 150ms ease;
 }
 .nav__top_but {    
