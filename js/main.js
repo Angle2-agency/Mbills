@@ -1,4 +1,9 @@
 
+$('.nav__left').click(function(e) {
+	if(!$(e.target).closest('aside.show-nav').length)$('#nav-button').click();
+	console.log(s);
+});
+
 
 $('#nav-button').click(function(){
 	if($('.nav__left').is(':hidden')){		

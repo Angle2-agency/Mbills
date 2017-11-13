@@ -2,6 +2,16 @@
                                 Fonts import
    ========================================================================== */
 @font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../fonts/HelveticaNeue-Regular/HelveticaNeue-CondensedRegular.eot');
+    src: url('../fonts/HelveticaNeue-Regular/HelveticaNeue-CondensedRegular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeue-Regular/HelveticaNeue-CondensedRegular.woff') format('woff'),
+    url('../fonts/HelveticaNeue-Regular/HelveticaNeue-CondensedRegular.ttf') format('truetype'),
+    url('../fonts/HelveticaNeue-Regular/HelveticaNeue-CondensedRegular.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
     font-family: 'HelveticaNeueThin';
     src: url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.eot');
     src: url('../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.eot?#iefix') format('embedded-opentype'),
@@ -165,6 +175,8 @@ header {
     box-shadow: 0 2px 8px 0 rgba(1, 15, 21, 0.08);
     position: fixed;
     top: 0;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 150ms ease;
 }
 .nav__top_but {    
     height: 47px;
@@ -174,9 +186,14 @@ header {
     margin-top: 12px;
 }
 .nav__top_but.appstore {
-    width: 169px;
-    background: url('../img/apple-store.png') no-repeat center / 169px 47px;
-    margin-right: 12px;
+    width: 157px;    
+    background: url('../img/apple-store-topnav.png') no-repeat center / 157px 47px;
+    margin-right: 24px;
+}
+.nav__top_but.googleplay {
+    width: 169px;    
+    background: url('../img/google-play-topnav.png') no-repeat center / 169px 47px;
+    margin-right: 16px;
 }
 
 
@@ -235,7 +252,7 @@ header {
 }
 .nav__left_strores {
     text-align: center;
-    margin-top: 72px;
+    margin: 72px 0;
 }
 .nav__left_strores .googleplay {
     display: inline-block;
@@ -245,6 +262,7 @@ header {
     box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
     background: url('../img/google-play.png') no-repeat center / 144px 48px;
     margin-right: 25px;
+    transition: all 150ms ease;
 }
 .nav__left_strores .appstore {
     display: inline-block;
@@ -253,4 +271,55 @@ header {
     border-radius: 12px;    
     box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
     background: url('../img/apple-store.png') no-repeat center / 144px 48px;
+    transition: all 150ms ease;
+}
+.nav__left_strores .googleplay:hover,
+.nav__left_strores .appstore:hover {
+    box-shadow: 0 16px 24px 0 rgba(1, 15, 21, 0.08);    
+}
+.nav__left_footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 40px;
+}
+.nav__left_footer .youtube {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url('../img/youtube-blue-copy.svg') no-repeat center / 20px 20px;
+    margin-left: 44px;
+}
+.nav__left_footer .facebook {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url('../img/facebook-blue-copy.svg') no-repeat center / 20px 20px;
+    margin-left: 24px;
+    transition: opacity 300ms ease;
+}
+.nav__left_footer .youtube:hover,
+.nav__left_footer .facebook:hover {
+    opacity: 0.6;
+}
+.nav__left_footer-text {    
+    font: 10px/1 'HelveticaNeue';
+    color: rgba(1, 15, 21, 0.5);
+    display: block;
+    margin-left: 25px;
+    float: left;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+.nav__left_circle-1 {
+    width: 109px;
+    height: 109px;
+    opacity: 0.1;
+    background-color: rgba(11, 159, 218, 0.5);    
+    border-radius: 50%;
+    position: absolute;
+    left: 245px;
+    top: 188px;
 }
