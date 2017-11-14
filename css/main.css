@@ -51,6 +51,16 @@
     font-weight: bold;
     font-style: normal;
 }
+@font-face {
+    font-family: 'HelveticaNeueCondensedBlack';
+    src: url('../fonts/HelveticaNeue-CondensedBlack/HelveticaNeue-CondensedBlack.eot');
+    src: url('../fonts/HelveticaNeue-CondensedBlack/HelveticaNeue-CondensedBlack.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeue-CondensedBlack/HelveticaNeue-CondensedBlack.woff') format('woff'),
+    url('../fonts/HelveticaNeue-CondensedBlack/HelveticaNeue-CondensedBlack.ttf') format('truetype'),
+    url('../fonts/HelveticaNeue-CondensedBlack/HelveticaNeue-CondensedBlack.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
 
 /* ==========================================================================
                      Base styles: opinionated defaults
@@ -89,6 +99,50 @@ a:hover {
     overflow: hidden;
     display: block;
 }
+
+.bg__bubble-1 {
+    width: 321px;
+    height: 321px;
+    opacity: 0.03;
+    background-color: #0b9fda;
+    border-radius: 50%;
+    position: absolute;
+    top: 765px;
+    left: -100px;
+}
+.bg__bubble-2 {
+    width: 32px;
+    height: 32px;
+    opacity: 0.1;
+    background-color: rgba(11, 159, 218, 0.5);    
+    border-radius: 50%;
+    position: absolute;
+    top: 970px;
+    left: 61vw;
+}
+.bg__bubble-3 {
+    width: 170px;
+    height: 435px;
+    opacity: 0.05;
+    background-color: #0b9fda;    
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    position: absolute;
+    top: 849px;
+    right: 0;
+}
+.bg__bubble-4 {
+    width: 182px;
+    height: 419px;
+    font: 900 350px/419px 'HelveticaNeueCondensedBlack';        
+    font-stretch: condensed;    
+    letter-spacing: normal;    
+    color: rgba(1, 15, 21, 0.02);
+    position: absolute;
+    top: 1012px;
+    left: 25vw;
+}
+
+
 
 /* ==========================================================================
                                 HEADER classes
@@ -139,7 +193,15 @@ header {
     position: absolute;
     right: 0;
     top: -9px;    
-    transition: all 300ms ease 200ms;
+    transition: all 300ms ease 200ms, background-color 150ms ease;
+}
+.nav__button:hover .nav__butto_icon,
+.nav__button:hover .nav__butto_icon::before,
+.nav__button:hover .nav__butto_icon::after {
+    background-color: rgba(11, 159, 218, 0.5)
+}
+.nav__button:hover .nav__butto_icon.show-nav {
+    background-color: transparent;
 }
 .nav__butto_icon.show-nav {
     background-color: transparent;
@@ -154,7 +216,7 @@ header {
     position: absolute;
     left: 0;
     bottom: -9px;
-    transition: all 300ms ease 200ms;
+    transition: all 300ms ease 200ms, background-color 150ms ease;
 }
 .nav__butto_icon.show-nav::before  {
     width: 25px;
@@ -176,6 +238,10 @@ header {
     letter-spacing: normal;
     text-align: left;
     color: rgba(1, 15, 21, 0.5);
+    transition: color 150ms ease;
+}
+.nav__button:hover .nav__butto_text {
+    color: rgba(11, 159, 218, 0.5);
 }
 
 .nav__top {
@@ -381,6 +447,10 @@ header {
     border-radius: 16px;    
     box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
     display: inline-block;
+    transition: box-shadow 150ms ease;
+}
+.frame-1__stores a:hover {
+    box-shadow: 0 16px 24px 0 rgba(1, 15, 21, 0.08);
 }
 .frame-1__stores a.googleplay {    
     background: url('../img/google-play.png') no-repeat center / 203px auto;
@@ -421,6 +491,7 @@ header {
     cursor: pointer;
     padding-left: 32px;
     position: relative;
+    transition: all 150ms ease;
 }
 .frame-1__play-but b {
     font-family: 'HelveticaNeueBold'
@@ -433,12 +504,24 @@ header {
     background: url('../img/play-video.svg') no-repeat center / 22px 22px;
     position: absolute;
     top: -4px;
-    left: 0;
-
+    left: 0;    
+}
+.frame-1__play-but:hover {
+    color: rgba(11, 159, 218, 0.5);
+}
+.frame-1__play-but:hover::before {
+    opacity: 0.6;
 }
 .frame-1__phone {
     width: 841px;
     height: auto;
     object-fit: contain;
     margin: 56px auto 0 auto;
+}
+
+/* ==========================================================================
+                                FRAME-2 classes
+   ========================================================================== */
+.frame-2 {
+    
 }

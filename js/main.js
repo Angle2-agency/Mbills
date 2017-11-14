@@ -1,7 +1,7 @@
 var myScroll;
+var rellax = new Rellax('.rellax');
 $('.nav__left').click(function(e) {
-	if(!$(e.target).closest('aside.show-nav').length)$('#nav-button').click();
-	console.log(s);
+	if(!$(e.target).closest('aside.show-nav').length)$('#nav-button').click();	
 });
 
 
@@ -11,10 +11,7 @@ $('#nav-button').click(function(){
 			console.log($('.nav__left aside').height());
 			if($('.nav__left aside').height() < 900){
 				$('.nav__left_footer').addClass('na');
-				myScroll = myScroll || new IScroll('.nav__left aside', {
-				    mouseWheel: true,
-				    scrollbars: true
-				});
+				$(".nav__left aside").nanoScroller();				
 			}else{
 				$('.nav__left_footer').removeClass('na');
 			}
