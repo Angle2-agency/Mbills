@@ -28,3 +28,11 @@ $('#nav-button').click(function(){
 	}
 	$('body').toggleClass('show-nav');
 })
+
+
+
+
+
+$('body').mousewheel(function(event) {
+    console.log(event.deltaX, event.deltaY, event.deltaFactor);
+});
