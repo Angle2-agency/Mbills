@@ -188,12 +188,22 @@ header {
 .nav__butto_icon {
     position: absolute;
     width: 24px;
-    height: 2px;
-    background-color:rgba(1, 15, 21, 0.5);
+    height: 2px;    
     display: block;
     left: 0;
-    top: 12px; 
-    transition: all 300ms ease 200ms;
+    top: 12px;     
+    transition: all 300ms ease 200ms
+}
+.nav__butto_icon i {
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color:rgba(1, 15, 21, 0.5);
+    left: 0;
+    top: 0; 
+    transition: all 300ms ease, opacity 300ms ease 200ms;
+    opacity: 1;
 }
 .nav__butto_icon::before {
     content: "";
@@ -206,13 +216,13 @@ header {
     top: -9px;    
     transition: all 300ms ease 200ms, background-color 150ms ease;
 }
-.nav__button:hover .nav__butto_icon,
+.nav__button:hover .nav__butto_icon i,
 .nav__button:hover .nav__butto_icon::before,
-.nav__button:hover .nav__butto_icon::after {
+.nav__button:hover .nav__butto_icon::after {    
     background-color: rgba(11, 159, 218, 0.5)
 }
-.nav__button:hover .nav__butto_icon.show-nav {
-    background-color: transparent;
+.nav__button .nav__butto_icon.show-nav i {
+    opacity: 0;
 }
 .nav__butto_icon.show-nav {
     background-color: transparent;
@@ -417,6 +427,14 @@ header {
     float: left;
     margin-top: 6px;
     letter-spacing: 0.5px;
+}
+.nav__left_footer-text a {
+    color: rgba(1, 15, 21, 0.5);
+    text-decoration: none;
+    transition: all 150ms ease;
+}
+.nav__left_footer-text a:hover {
+    color: rgba(11, 159, 218, 0.5);
 }
 .nav__left_circle-1 {
     width: 109px;
@@ -918,8 +936,7 @@ header {
 /* ==========================================================================
                                 FRAME-6 classes
    ========================================================================== */
-.frame-6 {
-    height: 572px;
+.frame-6 {    
     margin-top: 135px;
 }
 .frame-6__bg {
@@ -985,4 +1002,153 @@ header {
 }
 .frame-6__buttons li a:hover {
     box-shadow: 0 16px 24px 0 rgba(1, 15, 21, 0.08);
+}
+
+/* ==========================================================================
+                                NAV BOTTOM classes
+   ========================================================================== */
+.nav-bottom {
+    padding-top: 147px;
+    background: url('../img/logo.png') no-repeat center 40px / auto 56px;
+}
+.nav-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 45px auto;
+    display: table;
+}
+.nav-bottom ul li {
+    display: table-cell;
+    padding-right: 80px;
+}
+.nav-bottom ul li:last-child {
+    padding-right: 0;
+
+}
+.nav-bottom ul li a {        
+    font: bold 12px/1 'HelveticaNeueBold';    
+    color: rgba(1, 15, 21, 0.5);
+    text-decoration: none;    
+    transition: color 150ms ease;
+}
+.nav-bottom ul li a:hover {
+    color: rgba(11, 159, 218, 0.5);
+}
+
+/* ==========================================================================
+                                FOOTER classes
+   ========================================================================== */
+footer {
+    height: 56px;
+    background-color: #010f15;
+}
+footer .footer__table {
+    list-style: none;
+    margin: 0;
+    padding: 0;        
+    height: 56px;
+    position: relative;
+}
+footer .footer__table li {
+    
+}
+footer .footer__table li.left {    
+    text-align: left;
+    position: absolute;
+    left: 32px;
+    top: 23px;
+    
+}
+footer a {
+    text-decoration: none!important;
+    transition: all 150ms ease;
+}
+footer a:hover {
+    color: #0b9fda!important;
+}
+footer .footer__table li.left a {
+    font: 10px/1 'HelveticaNeueMedium';    
+    color: #ffffff;
+    display: block;
+    float: left;
+    padding-right: 13px;
+    margin-right: 12px;
+    position: relative;
+}
+footer .footer__table li.left a::after {
+    content : "";
+    display: block;
+    width: 1px;
+    height: 10px;
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    background-color: #fff;
+}
+footer .footer__table li.left a:last-child {
+    padding: 0;
+    margin: 0;
+}
+footer .footer__table li.left a:last-child::after {
+    display: none;
+}
+footer .footer__table li.center {
+    text-align: center;
+    width: 100%;
+    font: 10px/1 'HelveticaNeueMedium';
+    color: #ffffff;
+    padding-top: 23px;
+}
+footer .footer__table li.right {
+    text-align: left;
+    position: absolute;
+    right: 32px;
+    top: 23px;
+}
+footer .footer__table li.right span {
+    display: block;
+    float: right;
+    font: 10px/1 'HelveticaNeueMedium';  
+    color: #ffffff;
+    padding-left: 13px;
+    margin-left: 12px;
+    position: relative;
+}
+footer .footer__table li.right span::after {
+    content : "";
+    display: block;
+    width: 1px;
+    height: 10px;
+    position: absolute;
+    top: 1px;
+    left: 0px;
+    background-color: #fff;
+}
+footer .footer__table li.right a {
+    display: block;
+    float: right;
+}
+footer .footer__table li.right a.mail {
+    margin-left: 37px;
+    font: 10px/1 'HelveticaNeueMedium';  
+    color: #ffffff;
+}
+footer .footer__table li.right a.facebook {
+    margin-left: 32px;
+    width: 12px;
+    height: 12px;
+    background: url('../img/footer-facebook.svg') no-repeat center / 12px 12px;
+    float: right;
+}
+footer .footer__table li.right a.youtube {
+    width: 16px;
+    height: 12px;
+    background: url('../img/footer-youtube.svg') no-repeat center / 16px 12px;
+    float: right;
+}
+footer .footer__table li.right a.facebook:hover {
+    background: url('../img/footer-facebook-hover.svg') no-repeat center / 16px 12px;
+}
+footer .footer__table li.right a.youtube:hover {
+    background: url('../img/footer-youtube-hover.svg') no-repeat center / 16px 12px;   
 }
