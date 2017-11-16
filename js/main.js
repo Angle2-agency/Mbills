@@ -34,7 +34,7 @@ $('#nav-button').click(function(){
 		
 	}
 	$('body').toggleClass('show-nav');
-})
+});
 
 $('#play-video-1, #play-video-2').click(function(e){
 	console.log(e);	
@@ -57,8 +57,30 @@ $('#play-video-1, #play-video-2').click(function(e){
 	onYouTubeIframeAPIReady();	
 });
 
+$('.frame-1__news .frame-1__news_close').click(function(e) {
+	$('.frame-1__news').fadeOut(150);
+});
+
+$('.frame-4__comment').mouseenter(function(e){
+	var x = $(e.currentTarget).offset().left + $(e.currentTarget).width() + 25 + 529;	
+	if(($(document).width() - x) > 0){
+		$(e.currentTarget).find('.frame-4__comment_tooltip').css({
+			left : '100%',
+			paddingLeft : '25px'
+		}).fadeIn(150);				
+	}else{
+		$(e.currentTarget).find('.frame-4__comment_tooltip').css({
+			right : '100%',
+			paddingRight : '25px'
+		}).fadeIn(150);		
+	}	
+});
+$('.frame-4__comment').mouseleave(function(e){
+	$(e.currentTarget).find('.frame-4__comment_tooltip').removeAttr('style').fadeOut(150);
+});
 
 
 $('body').mousewheel(function(event) {
+
     console.log(event.deltaX, event.deltaY, event.deltaFactor);	
 });
