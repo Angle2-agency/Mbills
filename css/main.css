@@ -156,12 +156,19 @@ a:hover {
     border: 22px solid #0b9fda;
 }
 
-/*
-#wrapper {
-    transition: transform 700ms ease;
-    transform: translate3d(0, 0, 0);
+
+#wrapper, 
+.nav__button,
+.frame-2,
+.frame-3,
+.frame-4,
+.frame-5,
+.frame-6,
+.nav-bottom,
+footer {
+    opacity: 0;
 }
-*/
+
 
 /* ==========================================================================
                                 HEADER classes
@@ -178,7 +185,7 @@ header {
     top: 14px;
     left: 50%;
     margin-left: -79px;
-    z-index: 1;
+    z-index: 1;    
 }
 .header__logo img {
     width: 158px;
@@ -316,6 +323,11 @@ header {
     width: 169px;    
     background: url('../img/google-play-topnav.png') no-repeat center / 169px 47px;
     margin-right: 16px;
+    transition: box-shadow 150ms ease;
+}
+.nav__top_but.appstore:hover,
+ .nav__top_but.googleplay:hover {
+    box-shadow: 0 9px 15px 0 rgba(1, 15, 21, 0.08);
 }
 
 
@@ -466,6 +478,8 @@ header {
     background: url('../img/bg-frame-1.png') no-repeat center bottom / cover;
     text-align: center;
     position: relative;
+    opacity: 0;
+    transition: opacity 200ms ease;
 }
 .frame-1 h1 {
     margin: 0 auto;
@@ -546,7 +560,7 @@ header {
     cursor: pointer;
     padding-left: 32px;
     position: relative;
-    transition: all 150ms ease;
+    transition: color 150ms ease;
 }
 .frame-1__play-but b {
     font-family: 'HelveticaNeueBold'
@@ -560,7 +574,7 @@ header {
     position: absolute;
     top: -4px;
     left: 0;    
-    transition: all 150ms ease;
+    transition: opacity 150ms ease;
 }
 .frame-1__play-but:hover {
     color: rgba(11, 159, 218, 0.5);
@@ -581,7 +595,7 @@ header {
     box-shadow: 0 24px 32px 0 rgba(1, 15, 21, 0.08);
     position: absolute;
     left: 32px;
-    bottom: 0;    
+    top: 680px;
     padding: 32px 32px 23px 32px;
     text-align: left;
 }
@@ -649,25 +663,88 @@ header {
     margin: 255px auto 0 auto;
     position: relative;
 }
-.frame-2__title {
+.frame-2__title {    
+    width: 536px;    
+    margin: 0 0 8px 120px;
+    overflow: hidden;
+}
+.frame-2__title ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 5000px;
+}
+.frame-2__title li {
     width: 536px;
+    float: left;
     font: bold 14px/1 'HelveticaNeueBold';
     color: #0b9fda;
     text-transform: uppercase;
-    margin: 0 0 8px 120px;
 }
 .frame-2__description {
+    width: 536px;    
+    margin: 0 0 23px 120px;
+    overflow: hidden;
+}
+.frame-2__description ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 5000px;
+}
+.frame-2__description ul li {
     width: 536px;
     font: 36px/1.5 'HelveticaNeueMedium';    
     color: #010f15;
     letter-spacing: -0.5px;
-    margin: 0 0 23px 120px;
+    float: left;
 }
 .frame-2__bg {
     width: 1136px;
     height: 560px;
     background: url('../img/bg-frame-2.jpg') no-repeat center bottom;
     position: relative;
+    overflow: hidden;
+}
+.frame-2__bg::before {
+    content: "";
+    display: block;
+    width: 370px;
+    height: 370px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -223px;
+    left: -211px;
+    z-index: 1;
+}
+.frame-2__bg::after {
+    content: "";
+    display: block;
+    width: 390px;
+    height: 390px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -223px;
+    left: -211px;
+    opacity: 0.5;    
+    z-index: 1;
+}
+.frame-2__bg ul {
+    width: 7000px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.frame-2__bg ul li {
+    width: 1136px;
+    height: 560px;
+    float: left;
+}
+.frame-2__bg ul li img {
+    width: 1136px;
+    height: 560px;
 }
 .frame-2__bg_play-video {
     font: 14px/1 'HelveticaNeueMedium';
@@ -677,6 +754,7 @@ header {
     bottom: 33px;
     cursor: pointer;
     transition: all 150ms ease;
+    z-index: 3;
 }
 .frame-2__bg_play-video::before {
     content: "";
