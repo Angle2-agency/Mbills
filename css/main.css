@@ -484,6 +484,7 @@ header {
     width: 500px;
     margin: 34px auto 0 auto;
     position: relative;
+    padding-bottom: 38px;
 }
 .frame-1__stores a {    
     width: 203px;
@@ -528,7 +529,7 @@ header {
     transform: rotate(-7deg);
 }
 .frame-1__play-but {
-    margin: 38px auto 0 auto;
+    margin: 0 auto;
     display: inline-block;
     font: 14px/1 'HelveticaNeueLight';
     color: #010f15;
