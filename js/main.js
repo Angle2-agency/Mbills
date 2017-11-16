@@ -111,7 +111,7 @@ var animation = {
 		console.log(stage);
 	},
 	s_1 : function(){
-		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f1, onComplete : function(){			
+		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:stages.f1, onComplete : function(){			
 			animation.identifier = true;
 		}});
 	},
@@ -143,61 +143,37 @@ var animation = {
 			animation.identifier = true;
 		}});
 	},
-	s_7 : function(){
-		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f2, onComplete : function(){			
-			animation.identifier = true;
-		}});
+	s_7 : function(){		
 		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:-(321*5), onComplete : function(){			
-			animation.identifier = true;
-		}});
-		$('.nav__top').removeClass('show');
-	},
-	s_8 : function(){
-		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f3, onComplete : function(){			
-			animation.identifier = true;
-		}});
-		$('.nav__top').addClass('show');
-	},
-	s_9 : function(){
-		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f4, onComplete : function(){			
-			animation.identifier = true;
+			$('html, body').css({
+			overflowY : 'auto',
+			overflowX : 'hidden'
+		});
+		$(document).scrollTop(stages.f2);
+		$('#wrapper').removeAttr('style');
 		}});		
-	},
-	s_10 : function(){
-		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f5, onComplete : function(){			
-			animation.identifier = true;
-		}});		
-	},
-	s_11 : function(){
-		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f6, onComplete : function(){			
-			animation.identifier = true;
-		}});		
-	},
+	}	
 }
 $('body').mousewheel(function(event) {	
+	console.log(stage);
 	if(!animation.identifier)return;
 	if(event.deltaY == -1){
-		if(stage < 11){
+		if(stage < 8){
 			stage++;
-			animation.goToStage('animation.s_'+stage+'();');
-			event.preventDefault();
+			animation.goToStage('animation.s_'+stage+'();');			
 		}else{
 			return;
 		}
-	}
-	if(event.deltaY == 1){
-		if(stage > 1){
-			stage--;
-			animation.goToStage('animation.s_'+stage+'();');
-			event.preventDefault();	
-		}else{
-			return;
-		}
-	}
-	animation.identifier = false;
+		animation.identifier = false;
+	}	
+	
     console.log(event);
 });
-$(document).ready(function() {
-	animation.init();
+$(document).ready(function() {	
+	setTimeout(function(){
+		$(document).scrollTop(0);
+	},50);
+	
+	animation.init();	
 });
 
