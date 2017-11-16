@@ -171,6 +171,7 @@ header {
     top: 14px;
     left: 50%;
     margin-left: -79px;
+    z-index: 1;
 }
 .header__logo img {
     width: 158px;
