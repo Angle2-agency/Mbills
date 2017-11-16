@@ -1,6 +1,6 @@
 var myScroll;
 var player;
-var rellax = new Rellax('.rellax');
+//var rellax = new Rellax('.rellax');
 $('.nav__left').click(function(e) {
 	if(!$(e.target).closest('aside.show-nav').length)$('#nav-button').click();	
 });
@@ -80,7 +80,124 @@ $('.frame-4__comment').mouseleave(function(e){
 });
 
 
-$('body').mousewheel(function(event) {
 
-    console.log(event.deltaX, event.deltaY, event.deltaFactor);	
+
+
+
+/* ==========================================================================
+                           Initializing animation 
+   ========================================================================== */
+var stage = 1;
+var identifier = true;
+var stages;
+var animation = {
+	stages : {},
+	identifier : true,
+	init : function(){
+		animation.getCoord();
+	},
+	getCoord : function(){
+		stages = {			
+			'f1' : 0,
+			'f2' : $('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2,
+			'f3' : $('.frame-3').offset().top - ($(window).height() - $('.frame-3').height()) / 2,
+			'f4' : $('.frame-4').offset().top - ($(window).height() - $('.frame-4').height()) / 2,
+			'f5' : $('.frame-5').offset().top - ($(window).height() - $('.frame-5').height()) / 2,
+			'f6' : $('#wrapper').height() - $(window).height()
+		}
+	},
+	goToStage : function(stage){		
+		eval(stage);
+		console.log(stage);
+	},
+	s_1 : function(){
+		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f1, onComplete : function(){			
+			animation.identifier = true;
+		}});
+	},
+	s_2 : function(){
+		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f2, onComplete : function(){			
+			animation.identifier = true;
+		}});
+		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:0, onComplete : function(){			
+			animation.identifier = true;
+		}});
+	},
+	s_3 : function(){
+		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:-321, onComplete : function(){			
+			animation.identifier = true;
+		}});
+	},
+	s_4 : function(){
+		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:-(321*2), onComplete : function(){			
+			animation.identifier = true;
+		}});
+	},
+	s_5 : function(){
+		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:-(321*3), onComplete : function(){			
+			animation.identifier = true;
+		}});
+	},
+	s_6 : function(){
+		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:-(321*4), onComplete : function(){			
+			animation.identifier = true;
+		}});
+	},
+	s_7 : function(){
+		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f2, onComplete : function(){			
+			animation.identifier = true;
+		}});
+		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:-(321*5), onComplete : function(){			
+			animation.identifier = true;
+		}});
+		$('.nav__top').removeClass('show');
+	},
+	s_8 : function(){
+		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f3, onComplete : function(){			
+			animation.identifier = true;
+		}});
+		$('.nav__top').addClass('show');
+	},
+	s_9 : function(){
+		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f4, onComplete : function(){			
+			animation.identifier = true;
+		}});		
+	},
+	s_10 : function(){
+		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f5, onComplete : function(){			
+			animation.identifier = true;
+		}});		
+	},
+	s_11 : function(){
+		TweenMax.to('#wrapper', 1, {ease: Power2.easeInOut, y:-stages.f6, onComplete : function(){			
+			animation.identifier = true;
+		}});		
+	},
+}
+$('body').mousewheel(function(event) {	
+	if(!animation.identifier)return;
+	if(event.deltaY == -1){
+		if(stage < 11){
+			stage++;
+			animation.goToStage('animation.s_'+stage+'();');
+			event.preventDefault();
+		}else{
+			return;
+		}
+	}
+	if(event.deltaY == 1){
+		if(stage > 1){
+			stage--;
+			animation.goToStage('animation.s_'+stage+'();');
+			event.preventDefault();	
+		}else{
+			return;
+		}
+	}
+	animation.identifier = false;
+    console.log(event);
 });
+$(document).ready(function() {
+	animation.init();
+});
+

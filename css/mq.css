@@ -1,0 +1,15 @@
+/* ==========================================================================
+                              Mobile Adaptation
+   ========================================================================== */
+
+@media screen and (max-width: 1160px) {
+    .frame-1 h1 {
+        margin: 0 auto;
+        padding: 179px 0 0 0;
+        width: 465px;
+        font: 100 64px/1.19 'HelveticaNeueThin';
+        letter-spacing: 2px;
+        text-align: center;
+        color: #010f15;
+    }
+}

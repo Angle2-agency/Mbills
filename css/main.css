@@ -72,11 +72,13 @@
 html {
     color: #222;
     font-size: 1em;
-    line-height: 1.4;    
+    line-height: 1.4;  
+    overflow: hidden;  
 }
 body {
     background-color: #fff;
     height: 100%;    
+    overflow: hidden;
 }
 
 a {
@@ -154,7 +156,12 @@ a:hover {
     border: 22px solid #0b9fda;
 }
 
-
+/*
+#wrapper {
+    transition: transform 700ms ease;
+    transform: translate3d(0, 0, 0);
+}
+*/
 
 /* ==========================================================================
                                 HEADER classes
@@ -274,8 +281,11 @@ header {
     position: fixed;
     top: 0;    
     transform: translate3d(0, -100%, 0);
-    transition: transform 150ms ease;
+    transition: transform 300ms ease;
     z-index: 6;
+}
+.nav__top.show {
+    transform: translate3d(0, 0, 0);
 }
 .nav__top_logo {
     width: 158px;
