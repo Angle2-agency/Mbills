@@ -107,9 +107,10 @@ var app = {
 			'f6' : $('#wrapper').height() - $(window).height()
 		}
 	},
-	goToStage : function(delta){		
+	goToStage : function(delta, event){		
 		if(!app.identifier)return false;
-		console.log(app.stage, delta);
+		console.log(event.deltaFactor);
+		console.log(event.deltaY);
 		if(delta == -1){
 			if(app.stage < 8){
 				app.stage++;
@@ -273,8 +274,8 @@ var app = {
 		},
 	},	
 };
-$('body').mousewheel(function(event) {		
-		app.goToStage(event.deltaY);    
+$('body').mousewheel(function(event) {	
+	app.goToStage(event.deltaY, event);    
 });
 
 /*
