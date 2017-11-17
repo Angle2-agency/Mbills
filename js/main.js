@@ -313,30 +313,32 @@ var app = {
 var wheel = 0;
 var newDate;
 var oldDate = new Date();
-$('body').mousewheel(function(event) {	
+$('body').mousewheel(function(event){
 	newDate = new Date();
     var scrollAllowed = true;	    
-    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 200 ) {
+    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 100 ) {
         wheel++;
+        scrollAllowed = false;
+        oldDate = new Date();
         event.preventDefault();
 		return false;
     } else {
-        if( (newDate.getTime()-oldDate.getTime()) > 200 ) {
-            wheel = 0;	            
+        if( (newDate.getTime()-oldDate.getTime()) > 100 ) {
+            wheel = 0;
+            oldDate = new Date();
         }
         else {
+        	scrollAllowed = false;
+        	oldDate = new Date();
             event.preventDefault();
 			return false;
         }
     }
-    oldDate = new Date();	    
+    oldDate = new Date();    
     console.log(scrollAllowed);
-    if(scrollAllowed) {	
-	    if(app.identifier){
-	    	app.goToStage(event);
-	    }  		
-    }
-	//
+    if(scrollAllowed) {		    
+    	app.goToStage(event);
+    }	
 });
 
 /*
