@@ -127,6 +127,23 @@ var app = {
 	    oldDate = new Date();	    
 	    if( scrollAllowed ) {
 	        console.log('хуй');
+	        console.log(event.deltaY);
+	        if(!app.identifier)return false;			
+			if(event.deltaY < 0){				
+				if(app.stage < 8){
+					app.stage++;
+					app.play[app.stage]();			
+				}else{
+					return false;
+				}			
+			}else if(event.deltaY > 0){
+				if(app.stage > 1){
+					app.stage--			
+					app.play[app.stage]();
+				}else{
+					return false;
+				}			
+			}		
 	    }
 
 
@@ -299,7 +316,7 @@ var app = {
 	},	
 };
 $('body').mousewheel(function(event) {	
-	app.goToStage(event.deltaY, event);    
+	app.goToStage(event);    
 });
 
 /*
