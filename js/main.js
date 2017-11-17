@@ -100,7 +100,7 @@ var app = {
 	goToStage : function(event){
 		newDate = new Date();
 	    var scrollAllowed = true;	    
-	    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 200 ) {	        
+	    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 100 ) {	        
 	        wheel++;
 	        scrollAllowed = false;
 	    } else {
