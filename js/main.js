@@ -313,28 +313,28 @@ var app = {
 var wheel = 0;
 var newDate;
 var oldDate = new Date();
-$('body').mousewheel(function(event) {
-	if(!app.identifier){
-		event.preventDefault();
-		return false;
-	}
+$('body').mousewheel(function(event) {	
 	newDate = new Date();
     var scrollAllowed = true;	    
     if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 150 ) {
         wheel++;
-        scrollAllowed = false;
+        event.preventDefault();
+		return false;
     } else {
         if( (newDate.getTime()-oldDate.getTime()) > 150 ) {
             wheel = 0;	            
         }
         else {
-            scrollAllowed = false;
+            event.preventDefault();
+			return false;
         }
     }
     oldDate = new Date();	    
     console.log(scrollAllowed);
-    if( scrollAllowed ) {	        
-  		app.goToStage(event);          
+    if(scrollAllowed) {	
+	    if(app.identifier){
+	    	app.goToStage(event);
+	    }  		
     }
 	//
 });
