@@ -14,8 +14,7 @@ $('.modal').click(function(e){
 
 $('#nav-button').click(function(){
 	if($('.nav__left').is(':hidden')){		
-		$('.nav__left').fadeIn(300, function(){
-			console.log($('.nav__left aside').height());
+		$('.nav__left').fadeIn(300, function(){			
 			if($('.nav__left aside').height() < 900){
 				$('.nav__left_footer').addClass('na');
 				$(".nav__left aside").nanoScroller();				
@@ -36,8 +35,7 @@ $('#nav-button').click(function(){
 	$('body').toggleClass('show-nav');
 });
 
-$('#play-video-1, #play-video-2').click(function(e){
-	console.log(e);	
+$('#play-video-1, #play-video-2').click(function(e){	
 	var id = document.querySelector('#modal-1 .modal__wrapper');
 	function onYouTubeIframeAPIReady() {
 		player = new YT.Player(id, {
@@ -92,23 +90,13 @@ var newDate;
 var oldDate = new Date();
 var app = {
 	stage : 1,
-	prevStage : 1,
+	f2 : 0,
 	identifier : false,
 	stages : {},
 	init : function(){
 		app.play[0]();
-		app.getCoord();
-	},
-	getCoord : function(){
-		stages = {			
-			'f1' : 0,
-			'f2' : $('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2,
-			'f3' : $('.frame-3').offset().top - ($(window).height() - $('.frame-3').height()) / 2,
-			'f4' : $('.frame-4').offset().top - ($(window).height() - $('.frame-4').height()) / 2,
-			'f5' : $('.frame-5').offset().top - ($(window).height() - $('.frame-5').height()) / 2,
-			'f6' : $('#wrapper').height() - $(window).height()
-		}
-	},
+		app.f2 = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2);
+	},	
 	goToStage : function(event){
 		newDate = new Date();
 	    var scrollAllowed = true;	    
@@ -125,9 +113,7 @@ var app = {
 	    }
 
 	    oldDate = new Date();	    
-	    if( scrollAllowed ) {
-	        console.log('хуй');
-	        console.log(event.deltaY);
+	    if( scrollAllowed ) {	        
 	        if(!app.identifier)return false;			
 			if(event.deltaY < 0){				
 				if(app.stage < 8){
@@ -173,6 +159,10 @@ var app = {
 		0 : function(){
 			app.identifier = false;		
 			$('#wrapper, .frame-1').css('opacity', 1);		
+			if($('.frame-1__news').length){
+				var top = $(window).height() - $('.frame-1__news').outerHeight() - 40;
+				$('.frame-1__news').css('top', top);
+			}
 			TweenMax.set(['.frame-1 h1', '.frame-1__description', '.frame-1__stores', '.frame-1__play-but', '.frame-1__phone'], {opacity:0});
 			TweenMax.set('.header__logo', {y : (($(window).height() / 2) - 35)});
 			TweenMax.fromTo('.header__logo', 2, {opacity:0, scale:0.85}, {opacity:1, scale:1});
@@ -204,10 +194,9 @@ var app = {
 				app.identifier = true;			
 			}});
 		},
-		2 : function(){
-			console.log(app.stage);
+		2 : function(){			
 			app.identifier = false;	
-			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-stages.f2, onComplete : function(){			
+			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-app.f2, onComplete : function(){			
 				
 			}});
 			TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:0});
@@ -301,8 +290,11 @@ var app = {
 					overflowY : 'auto',
 					overflowX : 'hidden'
 				});
-				$(document).scrollTop(stages.f2);
-				$('#wrapper').css('transform','translate3d(0, 0, 0)');
+				$(document).scrollTop(app.f2);
+				$('#wrapper').css({
+					'transform' : 'translate3d(0, 0, 0)',
+					'marginRight' : '-17px'
+				});
 				$(document).scroll(function(e){
 					var tn = $('.frame-3').offset().top - 244;
 					if($(document).scrollTop() > tn){
