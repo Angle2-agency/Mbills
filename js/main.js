@@ -95,8 +95,7 @@ var app = {
 		app.play[0]();
 		app.f2 = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2);
 	},	
-	goToStage : function(event){
-		
+	goToStage : function(event){		
 	        if(!app.identifier)return false;			
 			if(event.deltaY < 0){				
 				if(app.stage < 8){
@@ -112,7 +111,7 @@ var app = {
 				}else{
 					return false;
 				}			
-			}			    
+			}
 
 
 		/*
@@ -315,25 +314,28 @@ var wheel = 0;
 var newDate;
 var oldDate = new Date();
 $('body').mousewheel(function(event) {
+	if(!app.identifier){
+		event.preventDefault();
+		return false;
+	}
 	newDate = new Date();
-	    var scrollAllowed = true;	    
-	    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 100 ) {
-	        wheel++;
-	        scrollAllowed = false;
-	    } else {
-	        if( (newDate.getTime()-oldDate.getTime()) > 100 ) {
-	            wheel = 0;	            
-	        }
-	        else {
-	            scrollAllowed = false;
-	        }
-	    }
-
-	    oldDate = new Date();	    
-	    console.log(scrollAllowed);
-	    if( scrollAllowed ) {	        
-	  		app.goToStage(event);          
-	    }
+    var scrollAllowed = true;	    
+    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 150 ) {
+        wheel++;
+        scrollAllowed = false;
+    } else {
+        if( (newDate.getTime()-oldDate.getTime()) > 150 ) {
+            wheel = 0;	            
+        }
+        else {
+            scrollAllowed = false;
+        }
+    }
+    oldDate = new Date();	    
+    console.log(scrollAllowed);
+    if( scrollAllowed ) {	        
+  		app.goToStage(event);          
+    }
 	//
 });
 
