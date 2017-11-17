@@ -88,6 +88,7 @@ $('.frame-4__comment').mouseleave(function(e){
 var wheel = 0;
 var newDate;
 var oldDate = new Date();
+var scrollPos = 0;
 var app = {
 	stage : 1,
 	f2 : 0,
@@ -101,11 +102,12 @@ var app = {
 		newDate = new Date();
 	    var scrollAllowed = true;	    
 	    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 100 ) {	        
-	        wheel++;
-	        scrollAllowed = false;
+	    	scrollPos -= event.deltaY*(10-wheel);
+	        wheel++;	        	        
 	    } else {
 	        if( (newDate.getTime()-oldDate.getTime()) > 100 ) {
-	            wheel = 0;	            
+	            wheel = 0;
+	            scrollPos -= event.deltaY*60;
 	        }
 	        else {
 	            scrollAllowed = false;
@@ -113,6 +115,7 @@ var app = {
 	    }
 
 	    oldDate = new Date();	    
+	    console.log(scrollAllowed);
 	    if( scrollAllowed ) {	        
 	        if(!app.identifier)return false;			
 			if(event.deltaY < 0){				
@@ -134,6 +137,27 @@ var app = {
 
 
 		/*
+		if( scrollAllowed ) {	        
+	        if(!app.identifier)return false;			
+			if(event.deltaY < 0){				
+				if(app.stage < 8){
+					app.stage++;
+					app.play[app.stage]();			
+				}else{
+					return false;
+				}			
+			}else if(event.deltaY > 0){
+				if(app.stage > 1){
+					app.stage--			
+					app.play[app.stage]();
+				}else{
+					return false;
+				}			
+			}		
+	    }
+
+
+
 		if(!app.identifier)return false;
 		console.log('deltaFactor: '+event.deltaFactor);
 		console.log('deltaY: '+event.deltaY);		
