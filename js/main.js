@@ -316,12 +316,12 @@ var oldDate = new Date();
 $('body').mousewheel(function(event) {	
 	newDate = new Date();
     var scrollAllowed = true;	    
-    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 150 ) {
+    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 200 ) {
         wheel++;
         event.preventDefault();
 		return false;
     } else {
-        if( (newDate.getTime()-oldDate.getTime()) > 150 ) {
+        if( (newDate.getTime()-oldDate.getTime()) > 200 ) {
             wheel = 0;	            
         }
         else {
