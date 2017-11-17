@@ -93,7 +93,7 @@ var app = {
 	identifier : false,
 	stages : {},
 	init : function(){
-		app.s_1();
+		app.s_0();
 		app.getCoord();
 	},
 	getCoord : function(){
@@ -110,7 +110,7 @@ var app = {
 		console.log(stage);
 		eval(stage);		
 	},
-	s_1 : function(){
+	s_0 : function(){
 		$('#wrapper, .frame-1').css('opacity', 1);		
 		TweenMax.set(['.frame-1 h1', '.frame-1__description', '.frame-1__stores', '.frame-1__play-but', '.frame-1__phone'], {opacity:0});
 		TweenMax.set('.header__logo', {y : (($(window).height() / 2) - 35)});
@@ -137,10 +137,27 @@ var app = {
 			$('.frame-2, .frame-3, .frame-4, .frame-5, .frame-6, .nav-bottom, footer').css('opacity', 1);
 		}});
 	},
-	s_2 : function(){
-		TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-stages.f2, onComplete : function(){			
+	s_1 : function(){
+		TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:0, onComplete : function(){			
 			app.identifier = true;			
 		}});		
+	},
+	s_2 : function(){
+		TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-stages.f2, onComplete : function(){			
+			
+		}});
+		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:0});
+			TweenMax.staggerTo(
+				['.frame-2__title ul', '.frame-2__description ul'],
+				0.5,			
+				{
+					x : 0,				
+					ease: Power2.easeInOut,
+					delay : 0.15
+				},
+				0.05
+			 );
+			TweenMax.to('.frame-2__bg ul', 0.4, {ease: Power2.easeInOut, x:0, delay : 0.3, onComplete : function(){app.identifier = true;}});			
 	},
 	s_3 : function(){
 		TweenMax.to('.frame-2__phone_slider ul', 0.5, {ease: Power2.easeInOut, x:-321});
@@ -232,16 +249,22 @@ var app = {
 
 $('body').mousewheel(function(event) {		
 	if(!app.identifier)return;
+	app.identifier = false;
 	if(event.deltaY == -1){
-		if(app.stage < 8){
-			console.log(app.stage);
+		if(app.stage < 8){			
 			app.stage++;
-			console.log(app.stage);
 			app.goToStage('app.s_'+app.stage+'();');
 		}else{
 			return;
 		}
-		app.identifier = false;
+	}else if(event.deltaY == 1){
+		if(app.stage > 1){
+			app.stage--;
+			app.goToStage('app.s_'+app.stage+'();');
+		}else{
+			app.identifier = true;
+			return;
+		}
 	}
     
 });
