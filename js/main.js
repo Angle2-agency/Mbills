@@ -87,7 +87,9 @@ $('.frame-4__comment').mouseleave(function(e){
 /* ==========================================================================
                            Initializing animation 
    ========================================================================== */
-
+var wheel = 0;
+var newDate;
+var oldDate = new Date();
 var app = {
 	stage : 1,
 	prevStage : 1,
@@ -107,7 +109,28 @@ var app = {
 			'f6' : $('#wrapper').height() - $(window).height()
 		}
 	},
-	goToStage : function(delta, event){		
+	goToStage : function(event){
+		newDate = new Date();
+	    var scrollAllowed = true;	    
+	    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 200 ) {	        
+	        wheel++;
+	        scrollAllowed = false;
+	    } else {
+	        if( (newDate.getTime()-oldDate.getTime()) > 100 ) {
+	            wheel = 0;	            
+	        }
+	        else {
+	            scrollAllowed = false;
+	        }
+	    }
+
+	    oldDate = new Date();	    
+	    if( scrollAllowed ) {
+	        console.log('хуй');
+	    }
+
+
+		/*
 		if(!app.identifier)return false;
 		console.log('deltaFactor: '+event.deltaFactor);
 		console.log('deltaY: '+event.deltaY);		
@@ -127,7 +150,7 @@ var app = {
 				return false;
 			}			
 		}		
-		//eval(stage);		
+		*/
 	},
 	play : {
 		0 : function(){
