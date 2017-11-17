@@ -109,9 +109,10 @@ var app = {
 	},
 	goToStage : function(delta, event){		
 		if(!app.identifier)return false;
-		console.log(event.deltaFactor);
-		console.log(event.deltaY);
+		console.log('deltaFactor: '+event.deltaFactor);
+		console.log('deltaY: '+event.deltaY);		
 		if(delta == -1){
+			console.log('stage: '+app.stage);
 			if(app.stage < 8){
 				app.stage++;
 				app.play[app.stage]();			
