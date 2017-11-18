@@ -701,8 +701,7 @@ header {
 }
 .frame-2__bg {
     width: 1136px;
-    height: 560px;
-    background: url('../img/bg-frame-2.jpg') no-repeat center bottom;
+    height: 560px;    
     position: relative;
     overflow: hidden;
 }
