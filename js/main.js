@@ -11,7 +11,7 @@ var wheel = 0;
 
 var app = {
 	stage : 1,
-	prevStage : 0,
+	freeScroll : false,
 	f2 : 0,
 	identifier : false,
 	stages : {},
@@ -333,7 +333,7 @@ var app = {
 		},
 		8 : function(){
 			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-(app.f2*2), onComplete : function(){
-				//$.fn.fullpage.destroy();
+				app.freeScroll = true;
 				TweenMax.fromTo('.header__logo', 0.3, {y:-200}, {y:0, ease: Power2.easeInOut, delay:0.3});
 				TweenMax.staggerFromTo(
 					['.frame-1__phone', '.frame-1__play-but' , '.frame-1__stores', '.frame-1__description', '.frame-1 h1'],
@@ -371,6 +371,7 @@ var app = {
 					if($(document).scrollTop() == 0){
 						app.stage = 1;
 						app.identifier = true;
+						app.freeScroll = false;
 						$.fn.fullpage.moveTo(1);
 						$('html, body').css({
 							overflowY : 'hidden',
@@ -398,7 +399,7 @@ $('.modal').click(function(e){
 
 
 $('#nav-button').click(function(){	
-	if($('.nav__left').is(':hidden')){		
+	if($('.nav__left').is(':hidden')){
 		app.identifier = false;
 		$('.nav__left').fadeIn(300, function(){			
 			if($('.nav__left aside').height() < 900){
@@ -410,10 +411,9 @@ $('#nav-button').click(function(){
 			$('.nav__left aside').addClass('show-nav');			
 		});
 		$('.nav__butto_icon').addClass('show-nav');		
-	}else{
-		app.identifier = true;
+	}else{		
 		wheel = 0;
-		app.identifier = true;
+		if(!app.freeScroll)app.identifier = true;		
 		$('.nav__left aside').removeClass('show-nav');
 		$('.nav__butto_icon').removeClass('show-nav');
 		setTimeout(function(){
