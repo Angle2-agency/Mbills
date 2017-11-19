@@ -309,7 +309,13 @@ var app = {
 			}});
 		},
 		8 : function(){
-			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-(app.f2*2), onComplete : function(){
+			var sY;
+			if($(window).width() > 800){
+				sY = app.f2*2
+			}else{
+				sY = app.f2*2.5
+			}
+			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-sY, onComplete : function(){
 				app.freeScroll = true;
 				TweenMax.fromTo('.header__logo', 0.3, {y:-200}, {y:0, ease: Power2.easeInOut, delay:0.3});
 				TweenMax.staggerFromTo(
@@ -326,18 +332,20 @@ var app = {
 						delay : 0.2
 					},
 					0.05
-				 );
-				TweenMax.to(['.frame-2__title ul', '.frame-2__description ul', '.frame-2__phone_slider ul', '.frame-2__bg ul'], 0, {x:0});
+				 );				
 				$('html, body').css({
 					overflowY : 'auto',
 					overflowX : 'hidden',
 					height : 'initial'
 				});
-				$(document).scrollTop(app.f2 * 2);
+				$(document).scrollTop(sY);
 				$('#wrapper').css({
 					'transform' : 'translate3d(0, 0, 0)',
 					'marginRight' : '-17px'
-				});				
+				});
+				TweenMax.to('.frame-2__phone_slider ul', 0, {x:0});
+				$('.frame-2__title ul li, .frame-2__description ul li, .frame-2__bg ul li').hide();
+				$('.frame-2__title ul li[data-frame="1"], .frame-2__description ul li[data-frame="1"], .frame-2__bg ul li[data-frame="1"]').show();
 				$(document).scroll(function(e){
 					var tn = $('.frame-3').offset().top - 250;
 					if($(document).scrollTop() >= tn){
