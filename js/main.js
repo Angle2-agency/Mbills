@@ -30,7 +30,7 @@ var app = {
 	},
 	getWidthTitle : function(){
 		var w;
-		if($(window).width() > 8000){
+		if($(window).width() > 800){
 			w = 536;
 		}else{
 			w = 295;
@@ -201,7 +201,7 @@ var app = {
 				}})	
 			}});
 			TweenMax.to('.frame-2__bg li', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-				//TweenMax.set('.frame-2__bg ul', {x : -(app.getWidthBg())})
+				TweenMax.set('.frame-2__bg ul', {x : -(app.getWidthBg())})
 				TweenMax.to('.frame-2__bg li', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
@@ -374,8 +374,7 @@ $('#nav-button').click(function(){
 			$('.nav__left aside').addClass('show-nav');			
 		});
 		$('.nav__butto_icon').addClass('show-nav');		
-	}else{				
-		console.log($(this));
+	}else{						
 		$(this).mouseleave()
 		if(!app.freeScroll)app.identifier = true;	
 		$('.nav__left aside').removeClass('show-nav');
@@ -395,10 +394,9 @@ $('#play-video-1, #play-video-2').click(function(e){
 		w = 854;
 		h = 480;
 	}else{
-		w = $(window).width() - 40;
+		w = $(window).width() - 100;
 		h = w / 1.77;
-	}
-	console.log(w, h);
+	}	
 	function onYouTubeIframeAPIReady() {
 		player = new YT.Player(id, {
 			height: h,
@@ -420,8 +418,7 @@ $('#play-video-1, #play-video-2').click(function(e){
 $('.frame-1__news .frame-1__news_close').click(function(e) {
 	$('.frame-1__news').fadeOut(150);
 });
-$('.frame-4__comment .frame-4__news_close').click(function(e) {
-	console.log(e);
+$('.frame-4__comment .frame-4__news_close').click(function(e) {	
 	$(e.target).closest('.frame-4__comment_tooltip').fadeOut(150);
 });
 
@@ -439,8 +436,7 @@ $('.frame-4__comment').mouseenter(function(e){
 				paddingRight : '25px'
 			}).fadeIn(150);		
 		}		
-	}else{
-		console.log($(e.currentTarget).find('.frame-4__comment_tooltip').height());
+	}else{		
 		var y = $(this).offset().top - 90;
 		$(e.currentTarget).find('.frame-4__comment_tooltip').css({
 			top : y,
@@ -454,8 +450,7 @@ $('.frame-4__comment').mouseleave(function(e){
 });
 
 $(document).on('touchstart', function(e){
-	app.touch.start = e.changedTouches[0].pageY;
-	console.log(e);
+	app.touch.start = e.changedTouches[0].pageY;	
 });
 $(document).on('touchmove', function(e){
 	var diff, direction;
@@ -478,8 +473,7 @@ $(document).ready(function() {
 		scrollingSpeed : 250,
 		onLeave: function(index, nextIndex, direction){						
 			if(!app.identifier)return false;
-			app.goToStage(direction);
-			console.log(index, nextIndex, direction);
+			app.goToStage(direction);			
 		}
 	});
 });
