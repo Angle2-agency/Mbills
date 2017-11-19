@@ -24,12 +24,8 @@ var app = {
 		app.f2 = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2);
 	},
 	getF2Y : function(){
-		var y;
-		if($(window).width() > 800){
-			y = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2);	
-		}else{
-			y = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2) + 50;
-		}		
+		var y;		
+		y = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2);			
 		return y;	
 	},
 	getWidthTitle : function(){
@@ -165,6 +161,7 @@ var app = {
 				0.05
 			 );
 			if(app.prevStage == 1){
+				$('.frame-1__news').fadeOut(150);
 				TweenMax.fromTo('#wrapper', 0.6, {y:0},{ease: Power2.easeInOut, y:-app.getF2Y(), delay : 0.35, onComplete : function(){
 					app.identifier = true;
 					wheel = 0;
@@ -203,11 +200,10 @@ var app = {
 				}})	
 			}});
 			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-				TweenMax.to('.frame-2__bg ul', 0, {x : -(app.getWidthBg()), onComplete : function(){
-					TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
+				TweenMax.set('.frame-2__bg ul', {x : -(app.getWidthBg())})
+				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
-				}})	
 			}});
 			TweenMax.to('.frame-2__phone_slider ul', 0.4, {ease: Power2.easeInOut, x:-(app.getWidthPhone()), delay : 0.8, onComplete : function(){
 				
@@ -461,7 +457,7 @@ $(document).on('touchmove', function(e){
 	}	
 });
 $(window).resize(function(e){
-	
+
 });
 $(document).ready(function() {
 	setTimeout(function(){
