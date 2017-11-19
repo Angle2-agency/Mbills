@@ -192,7 +192,8 @@ var app = {
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
 				TweenMax.to('.frame-2__title ul', 0, {x : -(app.getWidthTitle()), onComplete : function(){
 					TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
-				}})	
+				}});
+				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__description ul', 0.5, {opacity : 0, delay : 0.15, onComplete : function(){				
 				TweenMax.to('.frame-2__description ul', 0, {x : (-app.getWidthDescr()), onComplete : function(){
@@ -200,7 +201,7 @@ var app = {
 				}})	
 			}});
 			TweenMax.to('.frame-2__bg li', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-				TweenMax.set('.frame-2__bg ul', {x : -(app.getWidthBg())})
+				//TweenMax.set('.frame-2__bg ul', {x : -(app.getWidthBg())})
 				TweenMax.to('.frame-2__bg li', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
@@ -389,10 +390,19 @@ $('#nav-button').click(function(){
 
 $('#play-video-1, #play-video-2').click(function(e){	
 	var id = document.querySelector('#modal-1 .modal__wrapper');
+	var w, h;
+	if($(window).width() > 800){
+		w = 854;
+		h = 480;
+	}else{
+		w = $(window).width() - 40;
+		h = w / 1.77;
+	}
+	console.log(w, h);
 	function onYouTubeIframeAPIReady() {
 		player = new YT.Player(id, {
-			height: '480',
-			width: '854',
+			height: h,
+			width: w,
 			playerVars: {
 				'autoplay': 1
 			},
