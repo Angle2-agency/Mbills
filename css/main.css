@@ -712,11 +712,11 @@ header {
     width: 5000px;
 }
 .frame-2__title li {
-    width: 536px;
-    float: left;
+    width: 536px;    
     font: bold 14px/1 'HelveticaNeueBold';
     color: #0b9fda;
     text-transform: uppercase;
+    display: none;
 }
 .frame-2__description {
     width: 536px;    
@@ -734,7 +734,7 @@ header {
     font: 36px/1.5 'HelveticaNeueMedium';    
     color: #010f15;
     letter-spacing: -0.5px;
-    float: left;
+    display: none;
 }
 .frame-2__bg {
     width: 1136px;

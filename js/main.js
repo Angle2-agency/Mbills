@@ -161,6 +161,8 @@ var app = {
 				0.05
 			 );			
 			if(app.prevStage == 1){
+				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
+				$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
 				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
 				$('.frame-1__news').fadeOut(150);
 				TweenMax.fromTo('#wrapper', 0.6, {y:0},{ease: Power2.easeInOut, y:-app.getF2Y(), delay : 0.35, onComplete : function(){
@@ -193,17 +195,15 @@ var app = {
 		},
 		3 : function(){
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
-				TweenMax.to('.frame-2__title ul', 0, {x : -(app.getWidthTitle()), onComplete : function(){
-					TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
-				}});
+				$('.frame-2__title ul li').hide();
+				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
 				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__description ul', 0.5, {opacity : 0, delay : 0.15, onComplete : function(){				
-				TweenMax.to('.frame-2__description ul', 0, {x : (-app.getWidthDescr()), onComplete : function(){
-					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
-				}})	
-			}});
-			
+				$('.frame-2__description ul li').hide();
+				$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
+			}});			
 			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
 				$('.frame-2__bg ul li').hide();
 				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
@@ -218,14 +218,14 @@ var app = {
 		},	
 		4 : function(){			
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
-				TweenMax.to('.frame-2__title ul', 0, {x : (-app.getWidthTitle()*2), onComplete : function(){
-					TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
-				}})	
+				$('.frame-2__title ul li').hide();
+				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__description ul', 0.5, {opacity : 0, delay : 0.15, onComplete : function(){				
-				TweenMax.to('.frame-2__description ul', 0, {x : (-app.getWidthDescr()*2), onComplete : function(){
-					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
-				}})	
+				$('.frame-2__description ul li').hide();
+				$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
 				$('.frame-2__bg ul li').hide();
@@ -241,14 +241,14 @@ var app = {
 		},
 		5 : function(){			
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
-				TweenMax.to('.frame-2__title ul', 0, {x : (-app.getWidthTitle()*3), onComplete : function(){
-					TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
-				}})	
+				$('.frame-2__title ul li').hide();
+				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__description ul', 0.5, {opacity : 0, delay : 0.15, onComplete : function(){				
-				TweenMax.to('.frame-2__description ul', 0, {x : (-app.getWidthDescr()*3), onComplete : function(){
-					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
-				}})	
+				$('.frame-2__description ul li').hide();
+				$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
 				$('.frame-2__bg ul li').hide();
@@ -264,14 +264,14 @@ var app = {
 		},
 		6 : function(){			
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
-				TweenMax.to('.frame-2__title ul', 0, {x : (-app.getWidthTitle()*4), onComplete : function(){
-					TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
-				}})	
+				$('.frame-2__title ul li').hide();
+				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__description ul', 0.5, {opacity : 0, delay : 0.15, onComplete : function(){				
-				TweenMax.to('.frame-2__description ul', 0, {x : (-app.getWidthDescr()*4), onComplete : function(){
-					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
-				}})	
+				$('.frame-2__description ul li').hide();
+				$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
 				$('.frame-2__bg ul li').hide();
@@ -287,14 +287,14 @@ var app = {
 		},
 		7 : function(){
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
-				TweenMax.to('.frame-2__title ul', 0, {x : (-app.getWidthTitle()*5), onComplete : function(){
-					TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
-				}})	
+				$('.frame-2__title ul li').hide();
+				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__description ul', 0.5, {opacity : 0, delay : 0.15, onComplete : function(){				
-				TweenMax.to('.frame-2__description ul', 0, {x : (-app.getWidthDescr()*5), onComplete : function(){
-					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
-				}})	
+				$('.frame-2__description ul li').hide();
+				$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 			}});
 			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
 				$('.frame-2__bg ul li').hide();
