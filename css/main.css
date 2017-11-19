@@ -777,7 +777,7 @@ header {
 .frame-2__bg ul li {
     width: 1136px;
     height: 560px;
-    float: left;
+    display: none;
 }
 .frame-2__bg ul li img {
     width: 1136px;

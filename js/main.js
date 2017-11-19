@@ -200,9 +200,13 @@ var app = {
 					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 				}})	
 			}});
-			TweenMax.to('.frame-2__bg li', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-				TweenMax.set('.frame-2__bg ul', {x : -(app.getWidthBg())})
-				TweenMax.to('.frame-2__bg li', 0.5, {opacity : 1});
+			console.log(app.stage)
+			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
+				$('.frame-2__bg ul li').hide();
+				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
+
+				//TweenMax.set('.frame-2__bg ul', {x : -(app.getWidthBg())})
+				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
 			}});
