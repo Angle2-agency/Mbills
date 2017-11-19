@@ -156,6 +156,28 @@ a:hover {
     border: 22px solid #0b9fda;
 }
 
+.top__download {
+    display: block;        
+    width: 160px;
+    height: 46px;
+    border-radius: 16px;
+    background-color: #0b9fda;
+    box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
+    font: bold 14px/46px 'HelveticaNeueMedium';
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff!important;
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    margin-left: -80px;
+    z-index: 6;
+    transition: transform 200ms ease;
+    transform: translate3d(0, -150%, 0);
+}
+.top__download.show {
+    transform: translate3d(0, 0, 0);
+}
 
 #wrapper, 
 .nav__button,
@@ -357,12 +379,12 @@ header {
 }
 .nav__left aside ul {
     list-style: none;
-    margin: 112px 0 0 0;
+    margin: 12vh 0 0 0;
     padding: 0 0 0 96px;
 }
 .nav__left aside ul li {        
     font: bold 16px/1 'HelveticaNeueBold';            
-    margin-bottom: 56px;
+    margin-bottom: 6vh;
     position: relative;
 }
 .nav__left aside ul li a {
@@ -386,7 +408,7 @@ header {
 }
 .nav__left_strores {
     text-align: center;
-    margin: 72px 0;
+    margin: 7vh 0;
 }
 .nav__left_strores .googleplay {
     display: inline-block;
@@ -407,15 +429,27 @@ header {
     background: url('../img/apple-store.png') no-repeat center / 144px 48px;
     transition: all 150ms ease;
 }
+.nav__left_strores .download {
+    width: 200px;
+    height: 48px;
+    display: none;
+    margin: auto;        
+    border-radius: 16px;
+    background-color: #0b9fda;
+    box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
+    font: bold 14px/48px 'HelveticaNeueMedium';
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;    
+}
 .nav__left_strores .googleplay:hover,
 .nav__left_strores .appstore:hover {
     box-shadow: 0 16px 24px 0 rgba(1, 15, 21, 0.08);    
 }
-.nav__left_footer {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 40px;
+.nav__left_footer {    
+    display: table;
+    margin: auto;    
 }
 .nav__left_footer.na {
     position: static;
@@ -426,8 +460,7 @@ header {
     float: left;
     width: 20px;
     height: 20px;
-    background: url('../img/youtube-blue-copy.svg') no-repeat center / 20px 20px;
-    margin-left: 44px;
+    background: url('../img/youtube-blue-copy.svg') no-repeat center / 20px 20px;    
 }
 .nav__left_footer .facebook {
     display: block;
@@ -527,6 +560,9 @@ header {
 }
 .frame-1__stores a.appstore {    
     background: url('../img/apple-store.png') no-repeat center / 203px auto;
+}
+.frame-1__stores a.download {
+    display: none;
 }
 .frame-1__store-hint {    
     transform: rotate(7deg);
@@ -735,6 +771,7 @@ header {
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 .frame-2__bg ul li {
     width: 1136px;
@@ -830,7 +867,9 @@ header {
     margin: 0 auto;    
     padding: 0;
     display: table;
-    margin-bottom: 64px;
+    margin-bottom: 31px;
+    padding-bottom: 31px;
+    border-bottom: 2px solid rgba(1, 15, 21, 0.05);
 }
 .frame-3__list li {
     display: table-cell;
@@ -895,6 +934,9 @@ header {
     height: 531px;
     background: url('../img/bg-frame-4-comments.png') no-repeat center / 100% auto;    
 }
+.frame-4__comment_mobile {
+    display: none;
+}
 .frame-4__faces {
     height: 531px;
     background: url('../img/bg-frame-4-faces.png') no-repeat center / auto 531px;    
@@ -916,6 +958,40 @@ header {
     height: 100%;
     border-radius: 50%;
 }
+.frame-4__news_close {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+.frame-4__news_close::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(1, 15, 21, 0.25);
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    transition: background-color 150ms ease;
+}
+.frame-4__news_close::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(1, 15, 21, 0.25);
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    transition: background-color 150ms ease;
+}
 .frame-4__comment_tooltip {
     width: 529px;    
     border-radius: 16px;
@@ -932,7 +1008,7 @@ header {
 }
 .frame-4__comment_tooltip-text {    
     opacity: 0.5;
-    font: 16px/27px 'HelveticaNeueMedium'
+    font: 16px/27px 'HelveticaNeueMedium';
     color: #010f15;    
 }
 .frame-4__comment_tooltip-video {
@@ -962,7 +1038,9 @@ header {
     opacity: 0.6;
 }
 .frame-4__comment_tooltip-profile {
-    margin-top: 42px;
+    margin-top: 15px;
+    padding-top: 16px;
+    border-top: 2px solid rgba(1, 15, 21, 0.05);
 }
 .frame-4__comment_tooltip-profile ul {
     list-style: none;
@@ -1111,8 +1189,7 @@ header {
     font-stretch: normal;    
     letter-spacing: normal;
     text-align: center;
-    color: #ffffff;
-    padding-top: 27pxx;
+    color: #ffffff;    
 }
 .frame-6__opening-text b,
 .frame-6__download-text b {
@@ -1140,6 +1217,22 @@ header {
 }
 .frame-6__buttons li.appstore {
     padding-left: 16px;
+}
+.frame-6__buttons li.download {  
+    font: bold 14px/63px 'HelveticaNeueMedium';    
+    letter-spacing: normal;
+    text-align: center;
+    height: 63px;
+    padding: 0 42px;
+    margin: auto;
+    border-radius: 16px;
+    background-color: #ffffff;    
+    box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
+    display: none;
+}
+.frame-6__buttons li.download a {
+    color: #0b9fda;    
+    text-decoration: none;
 }
 .frame-6__buttons li.googleplay a {
     width: 203px;
@@ -1263,14 +1356,15 @@ footer .footer__table li.right {
     position: absolute;
     right: 32px;
     top: 23px;
+    width: 245px;
 }
 footer .footer__table li.right span {
     display: block;
-    float: right;
+    float: left;
     font: 10px/1 'HelveticaNeueMedium';  
     color: #ffffff;
     padding-left: 13px;
-    margin-left: 12px;
+    margin-left: 13px;
     position: relative;
 }
 footer .footer__table li.right span::after {
@@ -1287,23 +1381,24 @@ footer .footer__table li.right a {
     display: block;
     float: right;
 }
-footer .footer__table li.right a.mail {
-    margin-left: 37px;
+footer .footer__table li.right a.mail {    
     font: 10px/1 'HelveticaNeueMedium';  
     color: #ffffff;
+    float: left;
 }
 footer .footer__table li.right a.facebook {
-    margin-left: 32px;
+    margin-right: 32px;
     width: 12px;
     height: 12px;
     background: url('../img/footer-facebook.svg') no-repeat center / 12px 12px;
-    float: right;
+    float: left;
 }
 footer .footer__table li.right a.youtube {
     width: 16px;
     height: 12px;
     background: url('../img/footer-youtube.svg') no-repeat center / 16px 12px;
-    float: right;
+    float: left;
+    margin-right: 32px;
 }
 footer .footer__table li.right a.facebook:hover {
     background: url('../img/footer-facebook-hover.svg') no-repeat center / 16px 12px;

@@ -2,14 +2,547 @@
                               Mobile Adaptation
    ========================================================================== */
 
-@media screen and (max-width: 1160px) {
-    .frame-1 h1 {
-        margin: 0 auto;
-        padding: 179px 0 0 0;
-        width: 465px;
-        font: 100 64px/1.19 'HelveticaNeueThin';
-        letter-spacing: 2px;
-        text-align: center;
+@media screen and (max-width: 800px) {
+    .frame-1__news {
+        width: 90%;
+        border-radius: 16px;
+        background-color: #ffffff;
+        box-shadow: 0 24px 32px 0 rgba(1, 15, 21, 0.08);
+        position: absolute;
+        left: 0;
+        top: 680px;
+        padding: 32px 32px 23px 32px;
+        text-align: left;
+        margin: 0 5%; 
+    }
+    
+    .nav__top {
+        display: none;
+    }    
+    #wrapper {
+        margin: 0!important;
+    }
+    .bg__bubble-1 {
+        width: 160px;
+        height: 160px;
+        opacity: 0.03;
+        background-color: #0b9fda;
+        border-radius: 50%;
+        position: absolute;
+        top: 510px;
+        left: -80px;
+    }
+    .bg__bubble-2 {
+        width: 16px;
+        height: 16px;
+        opacity: 0.1;
+        background-color: rgba(11, 159, 218, 0.5);
+        border-radius: 50%;
+        position: absolute;
+        top: 597px;
+        left: 30vw;
+    }
+    .bg__bubble-3 {
+        width: 140px;
+        height: 140px;
+        opacity: 0.05;
+        background-color: #0b9fda;
+        border-radius: 50%;
+        position: absolute;
+        top: 570px;
+        right: -60px;
+    }
+    .bg__bubble-4 {
+        width: 182px;
+        height: 419px;
+        font: 900 350px/419px 'HelveticaNeueCondensedBlack';
+        font-stretch: condensed;
+        letter-spacing: normal;
+        color: rgba(1, 15, 21, 0.02);
+        position: absolute;
+        top: 528px;
+        left: 12vw;
+    }
+    .bg__bubble-5 {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #0b9fda;
+        position: absolute;
+        top: 630px;
+        left: 54vw;
+        opacity: 0.05;
+        border: none;
+    }
+    .header__logo {
+        width: 120px;
+        height: 32px;        
+        top: 21px;        
+        margin-left: -60px;        
+    }
+    .header__logo img {
+        width: 120px;
+        height: 32px;
+    }
+
+    .nav__button {
+        left: 22px;
+    }
+    .nav__button:hover * {
+        color: inherit!important;
+        background-color: inherit!important;
+    }
+    .nav__left {
+        background-color: rgba(1, 15, 21, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 6;
+        display: none;
+    }
+    .nav__left aside {
+        width: 100%;
+        height: 100%;        
+        overflow: hidden;
+        transform: translate3d(-100%, 0, 0);
+        transition: transform 150ms ease;
+        background:  rgba(255, 255, 255, 0.98) url('../img/logo.png') no-repeat center 20px / 120px 32px;
+    }
+    .nav__left aside ul {
+        list-style: none;
+        margin: 12vh 0 0 0;
+        padding: 0 0 0 72px;
+    }
+    .nav__left_strores .googleplay,
+    .nav__left_strores .appstore {
+        display: none;
+    }
+    .nav__left_strores .download {
+        display: block;
+    }
+    .nav__left_footer {
+        display: none;
+    }
+    .nav__left_strores {     
+        margin: 8vh 0;
+    }
+    .nav__button:hover .nav__butto_icon i,
+    .nav__button:hover .nav__butto_icon::before,
+    .nav__button:hover .nav__butto_icon::after {    
+        background-color: rgba(1, 15, 21, 0.5)!important;
+    }
+
+/* ==========================================================================
+                                FRAME-1 classes
+   ========================================================================== */
+
+    .frame-1 {
+        padding-bottom: 50px;
+    }
+    .frame-1 h1 {        
+        padding: 105px 0 0 0;
+        width: 273px;
+        font: 100 40px/1.25 'HelveticaNeueThin';
+        letter-spacing: normal;        
         color: #010f15;
     }
+    .frame-1__description {
+        width: 315px;
+        font-family: HelveticaNeueLight;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 28px;        
+        color: #010f15;
+        margin: 24px auto 0 auto;
+    }
+    .frame-1__stores {
+        width: auto;
+        margin: 30px auto 0 auto;
+        padding-bottom: 33px;
+    }
+    .frame-1__stores a.googleplay,
+    .frame-1__stores a.appstore {
+        display: none;
+    }
+    .frame-1__stores a.download {
+        display: inline-block;
+        margin: auto;
+        padding: 0 42px;        
+        height: 63px;
+        border-radius: 16px;
+        background-color: #0b9fda;        
+        box-shadow: 0 4px 8px 0 rgba(1, 15, 21, 0.08);
+        font: bold 14px/63px 'HelveticaNeueMedium';  
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;  
+    }
+    .frame-1__phone {
+        width: 334px;
+        height: auto;
+        object-fit: contain;
+        margin: 27px auto 0 auto;
+    }
+    .frame-1__phone img {
+        width: 334px;        
+    }
+
+/* ==========================================================================
+                                FRAME-2 classes
+   ========================================================================== */
+    .frame-2 {
+        width: 335px;
+        margin: 15vh auto 0 auto;
+        position: relative;
+    }
+    .frame-2__title {
+        width: 295px;
+        margin: 0 0 15px 20px;
+        overflow: hidden;
+    }
+    .frame-2__title li {
+        width: 295px;
+        float: left;        
+    }
+    .frame-2__description {
+        width: 335px;
+        margin: 0 0 87px 20px;
+        overflow: hidden;
+    }
+    .frame-2__description ul li {
+        width: 335px;
+        font: 24px/32px 'HelveticaNeueMedium';
+        color: #010f15;
+        letter-spacing: -0.5px;
+        float: left;
+    }
+    .frame-2__bg {
+        width: 335px;
+        height: 165px;
+        position: relative;
+        overflow: hidden;
+    }
+    .frame-2__bg ul li,
+    .frame-2__bg ul li img {
+        width: 335px;
+        height: 165px;        
+    }
+    .frame-2__bg::before {        
+        width: 105px;
+        height: 105px;                
+        bottom: -60px;
+        left: -60px;        
+    }
+    .frame-2__bg::after {        
+        width: 130px;
+        height: 130px;        
+        bottom: -73px;
+        left: -73px;        
+    }
+    .frame-2__bg_play-video {        
+        color: transparent;
+        position: absolute;
+        left: -28px;
+        bottom: -27px;
+        z-index: 3;
+    }
+    .frame-2__phone {        
+        right: -17px;
+        bottom: -106px;
+    }
+    .frame-2__phone_hull {
+        width: 235px;
+        height: 379px;
+        background: url(../img/frame-2-phone.png) no-repeat center / 235px 379px;
+        z-index: 3;
+        position: relative;
+    }
+    .frame-2__phone_slider {
+        width: 140px;
+        height: 305px;
+        position: absolute;
+        top: 25px;
+        left: 70px;
+        z-index: 2;
+        overflow: hidden;
+    }
+    .frame-2__phone_slider li,
+    .frame-2__phone_slider li img {
+        width: 140px;
+        height: 305px;        
+    }
+
+/* ==========================================================================
+                                FRAME-3 classes
+   ========================================================================== */
+    .frame-3 {
+        margin-top: 33vh;
+    }
+    .frame-3__title {
+        font: bold 16px/1 'HelveticaNeueBold';
+        letter-spacing: 4px;
+        text-align: center;
+        color: rgba(1, 15, 21, 0.5);
+        text-transform: uppercase;
+        margin-bottom: 43px;  
+    }
+    .frame-3__list {
+        list-style: none;
+        margin-bottom: 40px;
+        padding-bottom: 31px;        
+        display: block;        
+    }
+    .frame-3__list li {
+        display: block;
+        padding: 0;
+    }
+    .frame-3__list li:nth-child(odd) {
+        float: left;
+        margin-left: 20px;
+    }
+    .frame-3__list li:nth-child(even) {
+        float: right;
+        margin-right: 20px;
+    }
+    .frame-3__list {        
+        
+    }
+
+/* ==========================================================================
+                                FRAME-4 classes
+   ========================================================================== */
+    .frame-4 {
+        margin-top: 75px;
+    }
+    .frame-4__title {
+        width: auto;
+        font: 24px/32px 'HelveticaNeueLight';        
+        text-align: center;
+        color: #010f15;
+        margin: auto 20px;
+        position: relative;
+        z-index: 1;
+    }
+    .frame-4__dotted {
+     
+        width: 50vw;
+        height: 493px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .frame-4__comments,
+    .frame-4__faces {
+        height: 460px;        
+    }
+    .frame-4__faces-relative {
+        width: 320px;        
+        height: 400px;        
+    }
+    .frame-4__comment_desktop {
+        display: none;
+    }
+    .frame-4__comment_mobile {
+        display: block;
+    }
+    .frame-4__comment_tooltip {
+        width: 90%;
+        border-radius: 16px;
+        position: fixed;        
+        margin: 0 5%;
+        z-index: 1;
+        display: none;
+    }
+    .frame-4__comment_tooltip-text {     
+        font: 16px/24px 'HelveticaNeueMedium';        
+    }
+    .frame-4__comment_tooltip-video {        
+        margin-top: 27px;        
+    }
+    .frame-4__comment_tooltip-profile {
+        margin-top: 27px;
+        padding-top: 16px;        
+    }
+
+/* ==========================================================================
+                                FRAME-5 classes
+   ========================================================================== */
+    .frame-5 {
+        background: url(../img/bg-frame-5-waves.svg) no-repeat center / 160% auto;
+    }
+    .frame-5__waves {
+        height: auto;
+        background: url(../img/bg-frame-5.svg) no-repeat center / 100% auto;
+    }
+    .frame-5__title {
+        width: auto;
+        margin: 0 20px;
+        font: 24px/32px 'HelveticaNeueLight';                        
+        padding-top: 122px;
+    }
+
+/* ==========================================================================
+                                FRAME-6 classes
+   ========================================================================== */
+    .frame-6 {
+        margin-top: 135px;        
+    }
+    .frame-6__bg {
+        height: 78px;
+        background: url(../img/bg-frame-6.png) no-repeat center top / 180% auto;
+    }
+    .frame-6__content {        
+        background-color: #00a2dd;
+        padding-bottom: 72px;
+        height: auto;
+    }
+    .frame-6__opening-text {
+        font: 14px/1 'HelveticaNeueMedium';
+        font-stretch: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        padding-top: 60px;
+    }
+    .frame-6__download-text {
+        margin-top: 25px;
+        font: 24px/32px 'HelveticaNeueMedium';
+        font-stretch: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        padding: 0 40px;
+    }
+    .frame-6__buttons {
+        list-style: none;
+        padding: 0;
+        margin: 50px auto 0 auto;
+        display: table;
+    }    
+    .frame-6__buttons li.googleplay,
+    .frame-6__buttons li.appstore {
+        display: none;
+    }
+    .frame-6__buttons li.download {
+        display: block;
+    }
+
+/* ==========================================================================
+                                NAV BOTTOM classes
+   ========================================================================== */
+    .nav-bottom {
+        padding-top: 142px;
+        background: url(../img/logo.png) no-repeat center 40px / auto 56px;
+    }
+    .nav-bottom ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+    }
+    .nav-bottom ul li {
+        display: block;
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 27px;
+    }
+    .nav-bottom ul li a {
+        font: bold 12px/1 'HelveticaNeueBold';
+        color: rgba(1, 15, 21, 0.5);
+        text-decoration: none;
+        transition: color 150ms ease;
+    }
+
+/* ==========================================================================
+                                FOOTER classes
+   ========================================================================== */
+    footer {
+        height: auto;
+        background-color: #010f15;
+        padding-top: 29px;
+        padding-bottom: 35px;
+    }
+    footer .footer__table {     
+        margin: 0;
+        padding: 0;
+        height: auto;        
+    }
+    footer .footer__table li.left {
+        text-align: center;
+        position: static;
+        left: auto;
+        top: auto;
+    }
+    footer .footer__table li.left a {
+        font: 12px/1 'HelveticaNeueMedium';
+        color: #ffffff;
+        display: block;
+        float: none;
+        padding-right: 0;
+        margin-right: 0;
+        margin-bottom: 27px;        
+    }
+    footer .footer__table li.right {
+        text-align: center;
+        position: static;
+        right: auto;
+        top: auto;
+        margin-top: 32px;
+    }
+    footer .footer__table li.right {
+        text-align: center;
+        position: static;
+        right: auto;
+        top: auto;
+        width: auto;
+    }
+    footer .footer__table li.right .social {
+        width: 112px;
+        margin: auto;
+        margin-bottom: 32px;
+    }
+    footer .footer__table li.right a.youtube {
+        width: 32px;
+        height: 32px;
+        background: url(../img/footer-youtube.svg) no-repeat center / 32px 32px;
+        float: left;
+        margin-right: 0;        
+    }
+    footer .footer__table li.right a.facebook {
+        margin-right: 0;
+        width: 32px;
+        height: 32px;
+        background: url(../img/footer-facebook.svg) no-repeat center / 32px 32px;
+        float: right;
+    }
+    footer .footer__table li.right .contacts {
+        display: table;
+        margin: auto;
+    }
+    footer .footer__table li.right a.mail {
+        font: 12px/1 'HelveticaNeueMedium';
+        color: #ffffff;
+        float: left;
+    }
+    footer .footer__table li.right span {
+        display: block;
+        float: left;
+        font: 12px/1 'HelveticaNeueMedium';
+        color: #ffffff;
+        padding-left: 13px;
+        margin-left: 13px;
+        position: relative;
+    }
+    footer .footer__table li.left a::after {        
+        display: none;        
+    }
+    footer .footer__table li.center {        
+        padding-top: 37px;
+    }
+
+
+
+
 }
