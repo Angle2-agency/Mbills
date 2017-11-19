@@ -313,7 +313,7 @@ var app = {
 			if($(window).width() > 800){
 				sY = app.f2*2
 			}else{
-				sY = app.f2*2.5
+				sY = app.f2*2.2
 			}
 			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-sY, onComplete : function(){
 				app.freeScroll = true;
