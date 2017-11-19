@@ -159,8 +159,9 @@ var app = {
 					delay : 0.2
 				},
 				0.05
-			 );
+			 );			
 			if(app.prevStage == 1){
+				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
 				$('.frame-1__news').fadeOut(150);
 				TweenMax.fromTo('#wrapper', 0.6, {y:0},{ease: Power2.easeInOut, y:-app.getF2Y(), delay : 0.35, onComplete : function(){
 					app.identifier = true;
@@ -177,10 +178,12 @@ var app = {
 						TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 					}})	
 				}});
-				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-					TweenMax.to('.frame-2__bg ul', 0, {x : 0, onComplete : function(){
-						TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
-					}})	
+				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
+					$('.frame-2__bg ul li').hide();
+					$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();					
+					TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
+						app.identifier = true;
+						wheel = 0;
 				}});
 				TweenMax.to('.frame-2__phone_slider ul', 0.4, {ease: Power2.easeInOut, x:0, delay : 0.8, onComplete : function(){
 					app.identifier = true;
@@ -200,12 +203,11 @@ var app = {
 					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 				}})	
 			}});
-			console.log(app.stage)
+			
 			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
 				$('.frame-2__bg ul li').hide();
 				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
-
-				//TweenMax.set('.frame-2__bg ul', {x : -(app.getWidthBg())})
+				
 				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
@@ -225,12 +227,13 @@ var app = {
 					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 				}})	
 			}});
-			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-				TweenMax.to('.frame-2__bg ul', 0, {x : (-app.getWidthBg() * 2), onComplete : function(){
-					TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
+			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
+				$('.frame-2__bg ul li').hide();
+				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
+				
+				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
-				}})	
 			}});
 			TweenMax.to('.frame-2__phone_slider ul', 0.4, {ease: Power2.easeInOut, x:-(app.getWidthPhone()*2), delay : 0.8, onComplete : function(){
 				
@@ -247,12 +250,13 @@ var app = {
 					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 				}})	
 			}});
-			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-				TweenMax.to('.frame-2__bg ul', 0, {x : (-app.getWidthBg() * 3), onComplete : function(){
-					TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
+			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
+				$('.frame-2__bg ul li').hide();
+				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
+				
+				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
-				}})	
 			}});
 			TweenMax.to('.frame-2__phone_slider ul', 0.4, {ease: Power2.easeInOut, x:-(app.getWidthPhone()*3), delay : 0.8, onComplete : function(){
 				
@@ -269,12 +273,13 @@ var app = {
 					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 				}})	
 			}});
-			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-				TweenMax.to('.frame-2__bg ul', 0, {x : (-app.getWidthBg() * 4), onComplete : function(){
-					TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
+			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
+				$('.frame-2__bg ul li').hide();
+				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
+				
+				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
-				}})	
 			}});
 			TweenMax.to('.frame-2__phone_slider ul', 0.4, {ease: Power2.easeInOut, x:-(app.getWidthPhone()*4), delay : 0.8, onComplete : function(){
 				
@@ -291,12 +296,13 @@ var app = {
 					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 				}})	
 			}});
-			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){				
-				TweenMax.to('.frame-2__bg ul', 0, {x : (-app.getWidthBg() * 5), onComplete : function(){
-					TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
+			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
+				$('.frame-2__bg ul li').hide();
+				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
+				
+				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
 					app.identifier = true;
 					wheel = 0;
-				}})	
 			}});
 			TweenMax.to('.frame-2__phone_slider ul', 0.4, {ease: Power2.easeInOut, x:-(app.getWidthPhone()*5), delay : 0.8, onComplete : function(){
 				
