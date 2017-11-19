@@ -92,7 +92,7 @@ var app = {
 			$('html, body').scrollTop(0);			
 			$('#wrapper, .frame-1').css('opacity', 1);		
 			if($('.frame-1__news').length){
-				var top = $(window).height() - $('.frame-1__news').outerHeight() - 40;
+				var top = $(window).height() - $('.frame-1__news').outerHeight() - 80;
 				$('.frame-1__news').css('top', top);
 			}
 			TweenMax.set(['.frame-1 h1', '.frame-1__description', '.frame-1__stores', '.frame-1__play-but', '.frame-1__phone'], {opacity:0});
@@ -171,14 +171,14 @@ var app = {
 				}});	
 			}else if(app.prevStage == 3){
 				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
-				TweenMax.to('.frame-2__title ul', 0, {x : 0, onComplete : function(){
+					$('.frame-2__title ul li').hide();
+					$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
 					TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
-				}})	
 				}});
 				TweenMax.to('.frame-2__description ul', 0.5, {opacity : 0, delay : 0.15, onComplete : function(){				
-					TweenMax.to('.frame-2__description ul', 0, {x : 0, onComplete : function(){
-						TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
-					}})	
+					$('.frame-2__description ul li').hide();
+					$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
+					TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
 				}});
 				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
 					$('.frame-2__bg ul li').hide();
@@ -404,7 +404,7 @@ $('#play-video-1, #play-video-2').click(function(e){
 		w = 854;
 		h = 480;
 	}else{
-		w = $(window).width() - 100;
+		w = $(window).width() - 60;
 		h = w / 1.77;
 	}	
 	function onYouTubeIframeAPIReady() {
