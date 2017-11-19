@@ -297,14 +297,17 @@
     .frame-3__list li {
         display: block;
         padding: 0;
+        width: 40%;
     }
     .frame-3__list li:nth-child(odd) {
         float: left;
-        margin-left: 20px;
+        margin-left: 5%;
+        text-align: left;
     }
     .frame-3__list li:nth-child(even) {
         float: right;
-        margin-right: 20px;
+        margin-right: 5%;
+        text-align: right;
     }
     .frame-3__list {        
         
