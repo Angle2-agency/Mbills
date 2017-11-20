@@ -122,7 +122,7 @@ var app = {
 				wheel = 0;
 			}});
 		},
-		1 : function(){			
+		1 : function(){				
 			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:0, onComplete : function(){			
 				app.identifier = true;
 				wheel = 0;
@@ -171,6 +171,10 @@ var app = {
 					wheel = 0;
 				}});	
 			}else if(app.prevStage == 3){
+				TweenMax.to('.bg__bubble-4', 0.5, {opacity : 0, onComplete : function(){
+					$('.bg__bubble-4').text((app.stage - 1));				
+					TweenMax.to('.bg__bubble-4', 0.5, {opacity : 1});
+				}});		
 				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
 					$('.frame-2__title ul li').hide();
 					$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
@@ -194,7 +198,11 @@ var app = {
 				}});
 			}						
 		},
-		3 : function(){
+		3 : function(){			
+			TweenMax.to('.bg__bubble-4', 0.5, {opacity : 0, onComplete : function(){
+				$('.bg__bubble-4').text((app.stage - 1));				
+				TweenMax.to('.bg__bubble-4', 0.5, {opacity : 1});
+			}});
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
 				$('.frame-2__title ul li').hide();
 				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
@@ -217,7 +225,11 @@ var app = {
 				
 			}});			
 		},	
-		4 : function(){			
+		4 : function(){
+			TweenMax.to('.bg__bubble-4', 0.5, {opacity : 0, onComplete : function(){
+				$('.bg__bubble-4').text((app.stage - 1));				
+				TweenMax.to('.bg__bubble-4', 0.5, {opacity : 1});
+			}});
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
 				$('.frame-2__title ul li').hide();
 				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
@@ -240,7 +252,11 @@ var app = {
 				
 			}});
 		},
-		5 : function(){			
+		5 : function(){
+			TweenMax.to('.bg__bubble-4', 0.5, {opacity : 0, onComplete : function(){
+				$('.bg__bubble-4').text((app.stage - 1));				
+				TweenMax.to('.bg__bubble-4', 0.5, {opacity : 1});
+			}});
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
 				$('.frame-2__title ul li').hide();
 				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
@@ -263,7 +279,11 @@ var app = {
 				
 			}});
 		},
-		6 : function(){			
+		6 : function(){
+			TweenMax.to('.bg__bubble-4', 0.5, {opacity : 0, onComplete : function(){
+				$('.bg__bubble-4').text((app.stage - 1));				
+				TweenMax.to('.bg__bubble-4', 0.5, {opacity : 1});
+			}});
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
 				$('.frame-2__title ul li').hide();
 				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
@@ -287,6 +307,10 @@ var app = {
 			}});
 		},
 		7 : function(){
+			TweenMax.to('.bg__bubble-4', 0.5, {opacity : 0, onComplete : function(){
+				$('.bg__bubble-4').text((app.stage - 1));				
+				TweenMax.to('.bg__bubble-4', 0.5, {opacity : 1});
+			}});
 			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
 				$('.frame-2__title ul li').hide();
 				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
@@ -344,6 +368,7 @@ var app = {
 				TweenMax.to('.frame-2__phone_slider ul', 0, {x:0});
 				$('.frame-2__title ul li, .frame-2__description ul li, .frame-2__bg ul li').hide();
 				$('.frame-2__title ul li[data-frame="1"], .frame-2__description ul li[data-frame="1"], .frame-2__bg ul li[data-frame="1"]').show();
+				$('.bg__bubble-4').text('1');				
 				$(document).scroll(function(e){
 					var tn = $('.frame-3').offset().top - 250;
 					var bn = $(document).height() - $(window).height() - 200;					
