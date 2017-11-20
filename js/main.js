@@ -21,7 +21,7 @@ var app = {
 	},
 	init : function(){
 		app.play[0]();
-		app.f2 = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2);
+		app.f2 = $('.frame-3').offset().top;
 	},
 	getF2Y : function(){
 		var y;		
@@ -90,7 +90,8 @@ var app = {
 	play : {
 		0 : function(){
 			$('html, body').scrollTop(0);			
-			$('#wrapper, .frame-1').css('opacity', 1);		
+			$('#wrapper, .frame-1').css('opacity', 1);
+			$('.frame-2__title ul li[data-frame="1"], .frame-2__description ul li[data-frame="1"], .frame-2__bg ul li[data-frame="1"]').show();		
 			if($('.frame-1__news').length){
 				var top = $(window).height() - $('.frame-1__news').outerHeight() - 80;
 				$('.frame-1__news').css('top', top);
@@ -311,9 +312,10 @@ var app = {
 		8 : function(){
 			var sY;
 			if($(window).width() > 800){
-				sY = app.f2*2
+				//sY = app.f2
+				sY = $('.frame-3').offset().top - $('#wrapper').offset().top - 100;
 			}else{
-				sY = app.f2*2.2
+				sY = $('.frame-3').offset().top - $('#wrapper').offset().top - 50;
 			}
 			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-sY, onComplete : function(){
 				app.freeScroll = true;
