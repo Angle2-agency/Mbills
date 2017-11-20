@@ -1025,6 +1025,7 @@ header {
     transition: all 150ms ease;
     margin-top: 12px;
     cursor: pointer;
+    display: inline-block;
 }
 .frame-4__comment_tooltip-video:hover {
     color: #0B9FDA;
@@ -1096,11 +1097,10 @@ header {
 .frame-4__comment_tooltip-profile ul li .rate.r-5::before {
     width: 112px;
 }
-.frame-4__comment_tooltip-profile a {
+.frame-4__comment_tooltip-profile span {
     display: inline-block;
     font: 12px/1 'HelveticaNeueMedium';    
-    color: #0b9fda;
-    text-decoration: none;
+    color: #0b9fda;    
     margin-top: 2px;
 }
 .frame-4__comment:hover {    
