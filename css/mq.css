@@ -19,7 +19,10 @@
     .nav__top .appstore,
     .nav__top .googleplay {
         display: none;
-    }    
+    } 
+    .top__download {
+        display: block;
+    }   
     #wrapper {
         margin: 0!important;
     }

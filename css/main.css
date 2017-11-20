@@ -158,7 +158,7 @@ a:hover {
 }
 
 .top__download {
-    display: block;
+    display: none;
     width: 204px;
     height: 63px;
     border-radius: 16px;
