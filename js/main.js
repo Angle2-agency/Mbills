@@ -350,7 +350,7 @@ var app = {
 				$('.frame-2__title ul li[data-frame="1"], .frame-2__description ul li[data-frame="1"], .frame-2__bg ul li[data-frame="1"]').show();
 				$(document).scroll(function(e){
 					var tn = $('.frame-3').offset().top - 250;
-					var bn = $(document).height() - $(window).height() - 50;
+					var bn = $(document).height() - $(window).height() - 200;
 					console.log($(document).scrollTop(), bn - 50)
 					if($(document).scrollTop() >= tn && $(document).scrollTop() <= bn){
 						$('.top__download').addClass('show');
