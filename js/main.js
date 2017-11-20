@@ -334,12 +334,8 @@ var app = {
 						delay : 0.2
 					},
 					0.05
-				 );				
-				$('html, body').css({
-					overflowY : 'auto',
-					overflowX : 'hidden',
-					height : 'initial'
-				});
+				 );
+				$.fn.fullpage.setAutoScrolling(false);
 				$(document).scrollTop(sY);
 				$('#wrapper').css({
 					'transform' : 'translate3d(0, 0, 0)',
@@ -361,17 +357,13 @@ var app = {
 					}else{						
 						$('.top__download').removeClass('show');						
 					}
-					if($(document).scrollTop() == 0){
+					if($(document).scrollTop() == 0){						
 						app.stage = 1;
 						app.identifier = true;
 						app.freeScroll = false;
 						$.fn.fullpage.moveTo(1);
-						$('html, body').css({
-							overflowY : 'hidden',
-							overflowX : 'hidden',
-							height : '100%'
-						});												
-						$(document).unbind('scroll');
+						$.fn.fullpage.setAutoScrolling(true);
+						$(document).unbind('scroll');						
 					}
 				});				
 			}});			
@@ -495,9 +487,11 @@ $(document).ready(function() {
 	app.init();	
 	$('#fullpage').fullpage({
 		scrollingSpeed : 250,
-		onLeave: function(index, nextIndex, direction){						
+		fitToSection : false,
+		onLeave: function(index, nextIndex, direction){
+			console.log(index, nextIndex, direction);
 			if(!app.identifier)return false;
-			app.goToStage(direction);			
+			app.goToStage(direction);
 		}
 	});
 });
