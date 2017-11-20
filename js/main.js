@@ -350,15 +350,16 @@ var app = {
 				$('.frame-2__title ul li[data-frame="1"], .frame-2__description ul li[data-frame="1"], .frame-2__bg ul li[data-frame="1"]').show();
 				$(document).scroll(function(e){
 					var tn = $('.frame-3').offset().top - 250;
-					var bn = $(document).height() - $(window).height() - 200;
-					console.log($(document).scrollTop(), bn - 50)
-					if($(document).scrollTop() >= tn && $(document).scrollTop() <= bn){
-						$('.top__download').addClass('show');
+					var bn = $(document).height() - $(window).height() - 200;					
+					if($(document).scrollTop() >= tn){						
 						$('.nav__top').css('transform' , 'translate3d(0, 0, 0)');					
 					}else{
-						console.log('HIDE');
-						$('.top__download').removeClass('show');
 						$('.nav__top').css('transform' , 'translate3d(0, -100%, 0)');
+					}
+					if($(document).scrollTop() >= tn && $(document).scrollTop() <= bn){
+						$('.top__download').addClass('show');						
+					}else{						
+						$('.top__download').removeClass('show');						
 					}
 					if($(document).scrollTop() == 0){
 						app.stage = 1;
