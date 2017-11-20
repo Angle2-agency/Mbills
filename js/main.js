@@ -313,9 +313,9 @@ var app = {
 			var sY;
 			if($(window).width() > 800){
 				//sY = app.f2
-				sY = $('.frame-3').offset().top - $('#wrapper').offset().top - 100;
+				sY = $('.frame-3').offset().top - $('#wrapper').offset().top - 120;
 			}else{
-				sY = $('.frame-3').offset().top - $('#wrapper').offset().top - 50;
+				sY = $('.frame-3').offset().top - $('#wrapper').offset().top - 100;
 			}
 			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:-sY, onComplete : function(){
 				app.freeScroll = true;
