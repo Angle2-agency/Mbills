@@ -16,7 +16,8 @@
         margin: 0 5%; 
     }
     
-    .nav__top {
+    .nav__top .appstore,
+    .nav__top .googleplay {
         display: none;
     }    
     #wrapper {
@@ -436,8 +437,13 @@
                                 NAV BOTTOM classes
    ========================================================================== */
     .nav-bottom {
-        padding-top: 142px;
-        background: url(../img/logo.png) no-repeat center 40px / auto 56px;
+        padding-top: 42px;
+    }
+    .nav-bottom__logo {
+        display: block; 
+        width: 211px;
+        height: 56px;
+        margin: 0 auto 44px auto;
     }
     .nav-bottom ul {
         list-style: none;
@@ -505,6 +511,7 @@
         width: 112px;
         margin: auto;
         margin-bottom: 32px;
+        float: none;
     }
     footer .footer__table li.right a.youtube {
         width: 32px;
