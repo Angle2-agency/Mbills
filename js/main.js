@@ -513,8 +513,7 @@ $(document).ready(function() {
 	$('#fullpage').fullpage({
 		scrollingSpeed : 250,
 		fitToSection : false,
-		onLeave: function(index, nextIndex, direction){
-			console.log(index, nextIndex, direction);
+		onLeave: function(index, nextIndex, direction){			
 			if(!app.identifier)return false;
 			app.goToStage(direction);
 		}
