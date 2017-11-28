@@ -58,7 +58,7 @@ var app = {
 	getWidthPhone : function(){
 		var w;
 		if($(window).width() > 800){
-			w = 321;
+			w = 315;
 		}else{
 			w = 140;
 		}
@@ -68,7 +68,7 @@ var app = {
         if(!app.identifier)return false;
         app.identifier = false;
 		if(dir == 'down'){				
-			if(app.stage < 9){
+			if(app.stage < 10){
 				app.stage++;
 				app.prevStage = app.stage - 1;
 				app.play[app.stage]();			
@@ -334,6 +334,33 @@ var app = {
 			}});
 		},
 		8 : function(){
+			TweenMax.to('.bg__bubble-4', 0.5, {opacity : 0, onComplete : function(){
+				$('.bg__bubble-4').text((app.stage - 1));				
+				TweenMax.to('.bg__bubble-4', 0.5, {opacity : 1});
+			}});
+			TweenMax.to('.frame-2__title ul', 0.5, {opacity : 0, onComplete : function(){
+				$('.frame-2__title ul li').hide();
+				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__title ul', 0.5, {opacity : 1});
+			}});
+			TweenMax.to('.frame-2__description ul', 0.5, {opacity : 0, delay : 0.15, onComplete : function(){				
+				$('.frame-2__description ul li').hide();
+				$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
+				TweenMax.to('.frame-2__description ul', 0.5, {opacity : 1});
+			}});
+			TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 0, delay : 0.3, onComplete : function(){								
+				$('.frame-2__bg ul li').hide();
+				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
+				
+				TweenMax.to('.frame-2__bg ul', 0.5, {opacity : 1});
+					app.identifier = true;
+					wheel = 0;
+			}});
+			TweenMax.to('.frame-2__phone_slider ul', 0.4, {ease: Power2.easeInOut, x:-(app.getWidthPhone()*6), delay : 0.8, onComplete : function(){
+				
+			}});
+		},
+		9 : function(){
 			var sY;
 			if($(window).width() > 800){
 				//sY = app.f2
@@ -427,8 +454,12 @@ $('#nav-button').click(function(){
 	}
 	$('body').toggleClass('show-nav');
 });
+$('.frame-2__skip-button').click(function(){	
+	app.stage = 8;
+	app.goToStage('down');
+});
 
-$('#play-video-1, #play-video-2').click(function(e){	
+$('#play-video-1, #play-video-2, #slider-play-video-1, #slider-play-video-2, #slider-play-video-3, #slider-play-video-4, #slider-play-video-5, #slider-play-video-6, #slider-play-video-7').click(function(e){	
 	var id = document.querySelector('#modal-1 .modal__wrapper');
 	var w, h;
 	if($(window).width() > 800){

@@ -202,17 +202,17 @@ header {
 
 }
 .header__logo {
-    width: 158px;
+    width: 98px;
     height: 42px;
     display: block;
     position: absolute;    
     top: 14px;
     left: 50%;
-    margin-left: -79px;
+    margin-left: -49px;
     z-index: 1;    
 }
 .header__logo img {
-    width: 158px;
+    width: 98px;
     height: 42px;
 }
 .nav__button {
@@ -319,16 +319,16 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .nav__top_logo {
-    width: 158px;
+    width: 98px;
     height: 42px;
     display: block;
     position: absolute;
     top: 14px;
     left: 50%;
-    margin-left: -79px;
+    margin-left: -49px;
 }
 .nav__top_logo img {
-    width: 158px;
+    width: 98px;
     height: 42px;
 }
 .nav__top_but {    
@@ -624,7 +624,7 @@ header {
     opacity: 0.7;
 }
 .frame-1__phone {
-    width: 841px;
+    width: 895px;
     height: auto;
     object-fit: contain;
     margin: 56px auto 0 auto;
@@ -818,22 +818,22 @@ header {
 }
 .frame-2__phone {    
     position: absolute;
-    right: 8px;
-    bottom: -32px;
+    right: -6px;
+    bottom: -34px;
 }
 .frame-2__phone_hull {
-    width: 536px;
-    height: 864px;
-    background: url('../img/frame-2-phone.png') no-repeat center / 536px 864px;
+    width: 458px;
+    height: 820px;
+    background: url('../img/frame-2-phone.png') no-repeat center / 458px auto;
     z-index: 3;
     position: relative;
 }
 .frame-2__phone_slider {    
-    width: 321px;
-    height: 696px;
+    width: 315px;
+    height: 557px;
     position: absolute;    
-    top: 58px;
-    left: 160px;
+    top: 97px;
+    left: 66px;
     z-index: 2;
     overflow: hidden;    
 }
@@ -841,16 +841,23 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 2000px;
+    width: 2300px;
 }
 .frame-2__phone_slider li {
-    width: 321px;
-    height: 696px;
+    width: 315px;
+    height: 557px;
     float: left;
 }
 .frame-2__phone_slider li img {
-    width: 321px;
-    height: 696px;
+    width: 315px;
+    height: 557px;
+}
+.frame-2__skip-button {
+    width: 150px;
+    height: 150px;
+    background: url('../img/skip.svg') no-repeat center / 150px 150px;
+    margin: 15px auto 0 auto;
+    cursor: pointer;
 }
 
 /* ==========================================================================
@@ -1270,12 +1277,12 @@ header {
 }
 .nav-bottom__logo {
     display: block; 
-    width: 211px;
+    width: 131px;
     height: 56px;
     margin: 0 auto 40px auto;
 }
 .nav-bottom__logo img {
-    width: 211px;
+    width: 131px;
     height: 56px;
 } 
 .nav-bottom ul {
