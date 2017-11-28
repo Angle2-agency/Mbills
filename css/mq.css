@@ -85,7 +85,7 @@
         margin-left: -60px;        
     }
     .header__logo img {
-        width: 120px;
+        width: 75px;
         height: 32px;
     }
 
@@ -253,30 +253,40 @@
         z-index: 3;
     }
     .frame-2__phone {        
-        right: -17px;
-        bottom: -106px;
+        right: -48px;
+        bottom: 19px;
     }
     .frame-2__phone_hull {
         width: 235px;
-        height: 379px;
-        background: url(../img/frame-2-phone.png) no-repeat center / 235px 379px;
+        height: 430px;
+        background: url(../img/frame-2-phone.png) no-repeat center / 235px auto;
         z-index: 3;
         position: relative;
     }
     .frame-2__phone_slider {
-        width: 140px;
-        height: 305px;
+        width: 161px;
+        height: 285px;
         position: absolute;
-        top: 25px;
-        left: 70px;
+        top: 53px;
+        left: 34px;
         z-index: 2;
         overflow: hidden;
     }
     .frame-2__phone_slider li,
     .frame-2__phone_slider li img {
-        width: 140px;
-        height: 305px;        
+        width: 161px;
+        height: 285px;        
     }
+    .frame-2__skip-button {
+        width: 150px;
+        height: 150px;
+        background: url(../img/skip.svg) no-repeat center / 1100px 110px;
+        margin: 15px auto 0 auto;
+        cursor: pointer;
+        position: relative;
+        left: -90px;
+        top: -35px;
+}
 
 /* ==========================================================================
                                 FRAME-3 classes

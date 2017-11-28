@@ -518,6 +518,7 @@ header {
     position: relative;
     opacity: 0;
     transition: opacity 200ms ease;
+    z-index: 1;
 }
 .frame-1 h1 {
     margin: 0 auto;
@@ -639,6 +640,8 @@ header {
     top: 680px;
     padding: 32px 32px 23px 32px;
     text-align: left;
+    z-index: 1;
+    display: none;
 }
 .frame-1__news .frame-1__news_close {
     display: block;

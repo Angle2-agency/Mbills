@@ -60,7 +60,7 @@ var app = {
 		if($(window).width() > 800){
 			w = 315;
 		}else{
-			w = 140;
+			w = 161;
 		}
 		return w;
 	},
@@ -118,6 +118,7 @@ var app = {
 			 );
 			TweenMax.fromTo('.nav__button', 0.27, {opacity:0, x:-50}, {opacity:1, x:0, delay:2.8, onComplete : function(){							
 				$('.frame-2, .frame-3, .frame-4, .frame-5, .frame-6, .nav-bottom, footer').css('opacity', 1);
+				$('.frame-1__news').fadeIn(250);
 				app.identifier = true;
 				wheel = 0;
 			}});
