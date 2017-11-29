@@ -25,7 +25,12 @@ var app = {
 	},
 	getF2Y : function(){
 		var y;		
-		y = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2);			
+		if($(window).width() > 800){
+			y = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2);
+		}else{
+			y = ($('.frame-2').offset().top - ($(window).height() - $('.frame-2').height()) / 2) + 50;
+		}
+		
 		return y;	
 	},
 	getWidthTitle : function(){

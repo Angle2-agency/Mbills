@@ -212,7 +212,7 @@
     }
     .frame-2__description {
         width: 335px;
-        margin: 0 0 87px 20px;
+        margin: 0 0 100px 20px;
         overflow: hidden;
     }
     .frame-2__description ul li {
@@ -254,7 +254,7 @@
     }
     .frame-2__phone {        
         right: -48px;
-        bottom: 19px;
+        bottom: -150px;
     }
     .frame-2__phone_hull {
         width: 235px;
