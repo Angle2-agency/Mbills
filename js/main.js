@@ -123,7 +123,8 @@ var app = {
 				wheel = 0;
 			}});
 		},
-		1 : function(){				
+		1 : function(){		
+			$('.frame-2__skip-button').fadeOut(250);
 			TweenMax.to('#wrapper', 0.6, {ease: Power2.easeInOut, y:0, onComplete : function(){			
 				app.identifier = true;
 				wheel = 0;
@@ -166,10 +167,11 @@ var app = {
 				$('.frame-2__title ul li[data-frame='+(app.stage-1)+']').show();
 				$('.frame-2__description ul li[data-frame='+(app.stage-1)+']').show();
 				$('.frame-2__bg ul li[data-frame='+(app.stage-1)+']').show();
-				$('.frame-1__news').fadeOut(150);
+				$('.frame-1__news').fadeOut(150);								
 				TweenMax.fromTo('#wrapper', 0.6, {y:0},{ease: Power2.easeInOut, y:-app.getF2Y(), delay : 0.35, onComplete : function(){
+					$('.frame-2__skip-button').fadeIn(300);
 					app.identifier = true;
-					wheel = 0;
+					wheel = 0;					
 				}});	
 			}else if(app.prevStage == 3){
 				TweenMax.to('.bg__bubble-4', 0.5, {opacity : 0, onComplete : function(){
@@ -362,6 +364,7 @@ var app = {
 			}});
 		},
 		9 : function(){
+			$('.frame-2__skip-button').fadeOut(300);
 			var sY;
 			if($(window).width() > 800){
 				//sY = app.f2

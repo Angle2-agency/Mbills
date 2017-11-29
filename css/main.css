@@ -209,7 +209,7 @@ header {
     top: 14px;
     left: 50%;
     margin-left: -49px;
-    z-index: 1;    
+    z-index: 2;
 }
 .header__logo img {
     width: 98px;
@@ -859,8 +859,13 @@ header {
     width: 150px;
     height: 150px;
     background: url('../img/skip.svg') no-repeat center / 150px 150px;
-    margin: 15px auto 0 auto;
+    margin-left: -75px;
     cursor: pointer;
+    position: fixed;
+    left: 50%;
+    bottom: 15px;
+    z-index: 3;
+    display: none;
 }
 
 /* ==========================================================================
