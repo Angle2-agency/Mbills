@@ -744,8 +744,9 @@ header {
     display: none;
 }
 .frame-2__bg {
-    width: 1136px;
-    height: 561px;    
+    width: 1137px;
+    height: 561px;
+    padding-left: 1px;
     position: relative;
     overflow: hidden;
     border-radius: 16px;
@@ -790,6 +791,7 @@ header {
 .frame-2__bg ul li img {
     width: 1136px;
     height: 560px;
+    border-radius: 16px;
 }
 .frame-2__bg_play-video {
     font: 14px/1 'HelveticaNeueMedium';
