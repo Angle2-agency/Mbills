@@ -282,7 +282,8 @@
         height: 110px;
         background: url(../img/skip.svg) no-repeat center / 110px 110px;
         margin-left: -55px;
-        cursor: pointer;        
+        cursor: pointer;
+        bottom: -50px;
 }
 
 /* ==========================================================================

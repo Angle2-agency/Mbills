@@ -863,7 +863,7 @@ header {
     cursor: pointer;
     position: fixed;
     left: 50%;
-    bottom: 15px;
+    bottom: -70px;
     z-index: 3;
     display: none;
 }
